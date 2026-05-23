@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jose Matos — Resume</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Resume of Jose Matos — Cybersecurity Management graduate, blue team competitor, and security-focused developer." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0d1b2a;
+      --navy-mid:  #1a2f47;
+      --cyan:      #0ea5e9;
+      --cyan-dark: #0284c7;
+      --teal:      #0d9488;
+      --text:      #1e293b;
+      --text-mid:  #334155;
+      --text-muted:#64748b;
+      --line:      #e2e8f0;
+      --bg:        #ffffff;
+      --sidebar:   #f8fafc;
+      --accent-bg: #f0f9ff;
+    }
+
+    html { font-size: 10pt; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: #e8edf2;
+      line-height: 1.55;
+    }
+
+    /* ── Screen chrome ─────────────────────────────────────── */
+    .screen-bar {
+      background: var(--navy);
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .screen-bar a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .screen-bar a:hover { color: #fff; }
+
+    .screen-bar-right { display: flex; gap: 0.75rem; align-items: center; }
+
+    .btn-print {
+      background: var(--cyan);
+      color: #fff !important;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.82rem !important;
+    }
+    .btn-print:hover { background: var(--cyan-dark) !important; }
+
+    .screen-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem 3rem;
+    }
+
+    /* ── Paper ──────────────────────────────────────────────── */
+    .paper {
+      width: 8.5in;
+      min-height: 11in;
+      background: var(--bg);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+      display: grid;
+      grid-template-columns: 2.5in 1fr;
+    }
+
+    /* ── LEFT SIDEBAR ───────────────────────────────────────── */
+    .sidebar {
+      background: var(--navy);
+      padding: 2.2rem 1.3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .sb-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      margin: 0 auto 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .sb-name {
+      text-align: center;
+      color: #f1f5f9;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .sb-title {
+      text-align: center;
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .sb-section-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .sb-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sb-contact-icon {
+      color: var(--cyan);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .sb-contact-text {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      line-height: 1.4;
+      word-break: break-all;
+    }
+
+    .sb-skill-group {
+      margin-bottom: 0.9rem;
+    }
+
+    .sb-skill-group-name {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.35rem;
+    }
+
+    .sb-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .sb-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+      line-height: 1.5;
+    }
+
+    .sb-tag-cyan  { background: rgba(14,165,233,0.15); color: #7dd3fc; border: 1px solid rgba(14,165,233,0.25); }
+    .sb-tag-teal  { background: rgba(13,148,136,0.15); color: #5eead4; border: 1px solid rgba(13,148,136,0.25); }
+    .sb-tag-slate { background: rgba(100,116,139,0.2);  color: #94a3b8; border: 1px solid rgba(100,116,139,0.2); }
+    .sb-tag-orange{ background: rgba(251,146,60,0.12); color: #fdba74; border: 1px solid rgba(251,146,60,0.2); }
+
+    .sb-soft-item {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      padding: 0.2rem 0;
+      padding-left: 0.85rem;
+      position: relative;
+      line-height: 1.4;
+    }
+    .sb-soft-item::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 0.6rem;
+      top: 0.25em;
+    }
+
+    /* ── RIGHT MAIN ─────────────────────────────────────────── */
+    .main {
+      padding: 2rem 1.6rem 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    /* Header strip */
+    .main-header {
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 0.8rem;
+    }
+
+    .main-name {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--navy);
+    }
+
+    .main-name span { color: var(--cyan-dark); }
+
+    .main-role {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 0.2rem;
+    }
+
+    /* Section wrapper */
+    .section { display: flex; flex-direction: column; gap: 0.9rem; }
+
+    .section-title {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      background: var(--accent-bg);
+      border-left: 3px solid var(--cyan);
+      padding: 0.65rem 0.85rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* Experience */
+    .exp-item { margin-bottom: 0.1rem; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-role {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .exp-role .badge {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 700;
+      padding: 0.1rem 0.35rem;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.3);
+      border-radius: 3px;
+      color: var(--cyan-dark);
+      vertical-align: middle;
+      margin-left: 0.35rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .exp-company {
+      font-size: 0.77rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .exp-company .location {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .exp-date {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+      background: var(--sidebar);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    .exp-date.current {
+      background: rgba(13,148,136,0.08);
+      border-color: rgba(13,148,136,0.3);
+      color: var(--teal);
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.22rem;
+      margin-top: 0.3rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      padding-left: 0.95rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan-dark);
+      font-size: 0.6rem;
+      top: 0.22em;
+    }
+
+    .exp-bullets li strong { color: var(--navy); font-weight: 600; }
+
+    .exp-divider {
+      border: none;
+      border-top: 1px dashed var(--line);
+      margin: 0.7rem 0 0.6rem;
+    }
+
+    /* Projects */
+    .proj-item {
+      background: var(--sidebar);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.7rem 0.85rem;
+      border-left: 3px solid var(--cyan-dark);
+    }
+
+    .proj-item.proj-purple { border-left-color: #7c3aed; }
+
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.25rem;
+    }
+
+    .proj-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .proj-date {
+      font-size: 0.67rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+    }
+
+    .proj-sub {
+      font-size: 0.72rem;
+      color: var(--cyan-dark);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .proj-desc {
+      font-size: 0.76rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+      margin-bottom: 0.35rem;
+    }
+
+    .proj-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .proj-tag {
+      font-size: 0.62rem;
+      font-weight: 500;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.22);
+      color: var(--cyan-dark);
+    }
+
+    .proj-tag.purple {
+      background: rgba(124,58,237,0.08);
+      border-color: rgba(124,58,237,0.2);
+      color: #7c3aed;
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .edu-logo {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .edu-school { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+    .edu-degree { font-size: 0.78rem; color: var(--text-mid); margin-top: 0.1rem; }
+    .edu-degree strong { color: var(--cyan-dark); font-weight: 600; }
+    .edu-date { font-size: 0.7rem; color: var(--teal); font-family: 'JetBrains Mono', monospace; margin-top: 0.15rem; font-weight: 600; }
+
+    /* Certs / competitions callout */
+    .callout-row {
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    .callout {
+      flex: 1;
+      background: var(--sidebar);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.6rem 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .callout-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .callout-title { font-size: 0.78rem; font-weight: 700; color: var(--navy); }
+    .callout-body  { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.1rem; line-height: 1.45; }
+
+    /* ── Print styles ───────────────────────────────────────── */
+    @media print {
+      body { background: #fff; }
+      .screen-bar, .screen-wrap > * { display: none; }
+      .screen-wrap { padding: 0; background: none; }
+      .paper {
+        width: 100%;
+        box-shadow: none;
+        min-height: auto;
+      }
+      @page { margin: 0; size: letter; }
+    }
+
+    @media (max-width: 900px) {
+      .paper { grid-template-columns: 1fr; width: 100%; }
+      .sidebar { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Screen chrome bar ──────────────────────────────────── -->
+  <div class="screen-bar">
+    <a href="index.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Portfolio
+    </a>
+    <div class="screen-bar-right">
+      <a href="linkedin.html">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn Guide
+      </a>
+      <a href="Jose_Matos_Resume.docx" download class="btn-print">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download .docx
+      </a>
+      <a href="#" class="btn-print" style="background:#334155;" onclick="window.print(); return false;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:4px"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Save as PDF
+      </a>
+    </div>
+  </div>
+
+  <div class="screen-wrap">
+  <div class="paper">
+
+    <!-- ── SIDEBAR ─────────────────────────────────────────── -->
+    <aside class="sidebar">
+
+      <div>
+        <div class="sb-avatar">JM</div>
+        <p class="sb-name">Jose Matos</p>
+        <p class="sb-title">Cybersecurity &amp; Data Analytics</p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="sb-section-label">Contact</p>
+        <div class="sb-contact-item">
+          <svg class="sb-contact-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="sb-contact-text">Davie, FL 33330</span>
+        </div>
+        <div class="sb-contact-item">
+          <svg class="sb-contact-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 12a19.79 19.79 0 0 1-3-8.56A2 2 0 0 1 3 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+          <span class="sb-contact-text">813-678-4900</span>
+        </div>
+        <div class="sb-contact-item">
+          <svg class="sb-contact-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span class="sb-contact-text">josegmatoswork@gmail.com</span>
+        </div>
+        <div class="sb-contact-item">
+          <svg class="sb-contact-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="sb-contact-text">josematos.dev</span>
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div>
+        <p class="sb-section-label">Technical Skills</p>
+
+        <div class="sb-skill-group">
+          <p class="sb-skill-group-name">Programming &amp; Data</p>
+          <div class="sb-tags">
+            <span class="sb-tag sb-tag-slate">Python</span>
+            <span class="sb-tag sb-tag-slate">PyQt6</span>
+            <span class="sb-tag sb-tag-slate">Java</span>
+            <span class="sb-tag sb-tag-slate">HTML/CSS</span>
+            <span class="sb-tag sb-tag-slate">SQL</span>
+            <span class="sb-tag sb-tag-slate">Tableau</span>
+          </div>
+        </div>
+
+        <div class="sb-skill-group">
+          <p class="sb-skill-group-name">Cybersecurity</p>
+          <div class="sb-tags">
+            <span class="sb-tag sb-tag-cyan">Wireshark</span>
+            <span class="sb-tag sb-tag-cyan">Splunk</span>
+            <span class="sb-tag sb-tag-cyan">Blue Team</span>
+            <span class="sb-tag sb-tag-cyan">Threat Detection</span>
+            <span class="sb-tag sb-tag-cyan">Reverse Engineering</span>
+            <span class="sb-tag sb-tag-cyan">Malware Analysis</span>
+            <span class="sb-tag sb-tag-cyan">CyberChef</span>
+            <span class="sb-tag sb-tag-cyan">John the Ripper</span>
+          </div>
+        </div>
+
+        <div class="sb-skill-group">
+          <p class="sb-skill-group-name">Systems</p>
+          <div class="sb-tags">
+            <span class="sb-tag sb-tag-teal">Linux</span>
+            <span class="sb-tag sb-tag-teal">Windows Admin</span>
+            <span class="sb-tag sb-tag-teal">macOS</span>
+            <span class="sb-tag sb-tag-teal">Virtual Machines</span>
+            <span class="sb-tag sb-tag-teal">OS Internals</span>
+          </div>
+        </div>
+
+        <div class="sb-skill-group">
+          <p class="sb-skill-group-name">Game Security</p>
+          <div class="sb-tags">
+            <span class="sb-tag sb-tag-orange">Cheat Ecosystems</span>
+            <span class="sb-tag sb-tag-orange">Anti-Cheat Logic</span>
+            <span class="sb-tag sb-tag-orange">Internal/External Cheats</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Skills -->
+      <div>
+        <p class="sb-section-label">Professional Skills</p>
+        <div class="sb-soft-item">Technical &amp; non-technical communication</div>
+        <div class="sb-soft-item">Rapid self-directed learning</div>
+        <div class="sb-soft-item">Knowledge gap identification</div>
+        <div class="sb-soft-item">Safe malware handling</div>
+        <div class="sb-soft-item">Excellent verbal &amp; written English</div>
+        <div class="sb-soft-item">Team collaboration &amp; problem solving</div>
+      </div>
+
+    </aside>
+
+    <!-- ── MAIN CONTENT ─────────────────────────────────────── -->
+    <main class="main">
+
+      <!-- Header -->
+      <div class="main-header">
+        <h1 class="main-name">Jose <span>Matos</span></h1>
+        <p class="main-role">Cybersecurity Management · Data Analytics · Threat Detection</p>
+      </div>
+
+      <!-- Summary -->
+      <div class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary-text">
+          Graduating cybersecurity professional (B.S. Cybersecurity Management, May 2026) with hands-on
+          experience in enterprise IT consulting, blue team competition, and security-focused software
+          engineering. Proven ability to detect, analyze, and neutralize threats through log forensics,
+          reverse engineering, and ML-driven behavioral analysis. Builds secure, user-facing systems and
+          communicates complex risk to both technical teams and executive stakeholders. Combines deep
+          knowledge of OS internals, network analysis, and game-security cheat ecosystems with a strong
+          record of rapid skill acquisition and independent delivery.
+        </p>
+      </div>
+
+      <!-- Experience -->
+      <div class="section">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <p class="exp-role">Blue Team Competitor <span class="badge" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.3);color:#7c3aed;">CTF</span></p>
+              <p class="exp-company">NCAE Cyber Games <span class="location">· National Collegiate Cyber Defense Competition</span></p>
+            </div>
+            <span class="exp-date">2024 – 2025</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Competed nationally as a blue team defender, protecting live infrastructure against active red team attacks in timed, high-pressure scenarios.</li>
+            <li>Captured flags through log analysis, encoded payload decoding, and attacker-activity tracing using <strong>Splunk</strong> SIEM and Linux CLI tooling.</li>
+            <li>Applied <strong>reverse engineering</strong> techniques to analyze obfuscated binaries and recover hidden data; cracked password hashes with <strong>John the Ripper</strong>.</li>
+            <li>Decoded multi-stage cipher challenges using <strong>CyberChef</strong> and <strong>dCode</strong> under strict time constraints.</li>
+            <li>Operated entirely within virtualized Linux environments, pivoting across multiple VMs during live defense scenarios.</li>
+          </ul>
+        </div>
+
+        <hr class="exp-divider" />
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <p class="exp-role">IT Intern</p>
+              <p class="exp-company">Cari-Med Limited <span class="location">· Kingston, Jamaica</span></p>
+            </div>
+            <span class="exp-date">2024</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Delivered first-line technical support across hardware, software, and network systems, maintaining high resolution rates on help desk tickets.</li>
+            <li>Supported network operations including user access management, connectivity troubleshooting, and equipment lifecycle documentation.</li>
+            <li>Assisted in data management processes — backups, basic security checks, and system maintenance — in a live enterprise environment.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="proj-item">
+          <div class="proj-header">
+            <p class="proj-name">Project Ejay — Early-Stage Ransomware Detection System</p>
+            <span class="proj-date">Dec 2025 – Present</span>
+          </div>
+          <p class="proj-sub">Nova Southeastern University · Python · Machine Learning · Behavioral Analysis</p>
+          <p class="proj-desc">
+            Prototype system that detects ransomware <em>before</em> file encryption begins by monitoring system,
+            file, and process behavior at runtime. A Python ML classifier distinguishes normal activity from
+            malicious patterns — enabling intervention at the earliest possible stage.
+          </p>
+          <div class="proj-stack">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Machine Learning</span>
+            <span class="proj-tag">Threat Detection</span>
+            <span class="proj-tag">Behavioral Analysis</span>
+            <span class="proj-tag">Pre-Encryption Detection</span>
+          </div>
+        </div>
+
+        <div style="height:0.6rem"></div>
+
+        <div class="proj-item proj-purple">
+          <div class="proj-header">
+            <p class="proj-name">StintMind — AI Motorsport Race Strategy &amp; Security Platform</p>
+            <span class="proj-date">May – Jul 2026</span>
+          </div>
+          <p class="proj-sub" style="color:#7c3aed;">Personal Project · Python · PyQt6 · AES-256-GCM · Machine Learning</p>
+          <p class="proj-desc">
+            Python desktop app delivering real-time AI strategy for competitive motorsport teams in iRacing
+            and Le Mans Ultimate. Ingests 60 Hz shared-memory telemetry and uses ML to predict tire
+            degradation, fuel burn, and lap-time evolution. Security built on AES-256-GCM encryption and
+            HMAC-SHA256 frame integrity — CIA-triad architecture from the ground up.
+          </p>
+          <div class="proj-stack">
+            <span class="proj-tag purple">Python</span>
+            <span class="proj-tag purple">PyQt6</span>
+            <span class="proj-tag purple">Machine Learning</span>
+            <span class="proj-tag purple">AES-256-GCM</span>
+            <span class="proj-tag purple">HMAC-SHA256</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-item">
+          <div class="edu-logo">NSU</div>
+          <div>
+            <p class="edu-school">Nova Southeastern University — Davie, FL</p>
+            <p class="edu-degree">B.S. <strong>Cybersecurity Management</strong> · Minor in <strong>Data Analytics</strong></p>
+            <p class="edu-date">Expected May 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Callout row -->
+      <div class="callout-row">
+        <div class="callout">
+          <span class="callout-icon">🏆</span>
+          <div>
+            <p class="callout-title">NCAE Cyber Games</p>
+            <p class="callout-body">National collegiate blue team CTF competitor — Splunk, RE, forensics</p>
+          </div>
+        </div>
+        <div class="callout">
+          <span class="callout-icon">🔒</span>
+          <div>
+            <p class="callout-title">Security Clearance Eligible</p>
+            <p class="callout-body">U.S.-based, no disqualifying history — available for background check</p>
+          </div>
+        </div>
+        <div class="callout">
+          <span class="callout-icon">🌐</span>
+          <div>
+            <p class="callout-title">Portfolio</p>
+            <p class="callout-body">josematos.dev — live projects, code samples &amp; contact</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div><!-- /paper -->
+  </div><!-- /screen-wrap -->
+
+</body>
+</html>

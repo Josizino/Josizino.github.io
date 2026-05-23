@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Jose Matos</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #080c18;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(5rem, 18vw, 9rem);
+      font-weight: 900;
+      line-height: 1;
+      color: #00d4ff;
+      opacity: 0.15;
+      user-select: none;
+    }
+    h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      margin: 1rem 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    p {
+      color: #8892a4;
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #00d4ff;
+      color: #080c18;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 28px rgba(0,212,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="code">404</div>
+    <h1>Page not found.</h1>
+    <p>This page doesn't exist — but the portfolio does.</p>
+    <a href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Portfolio
+    </a>
+  </div>
+</body>
+</html>

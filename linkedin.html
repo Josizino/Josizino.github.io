@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jose Matos — LinkedIn Profile Guide</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="LinkedIn profile optimization guide for Jose Matos — copy-ready headlines, summaries, and experience entries." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #080c18;
+      --bg-alt:   #0c1124;
+      --bg-card:  #0f1629;
+      --border:   rgba(0,212,255,0.12);
+      --border-s: rgba(255,255,255,0.07);
+      --cyan:     #00d4ff;
+      --cyan-dim: rgba(0,212,255,0.12);
+      --purple:   #7c3aed;
+      --green:    #22d3a0;
+      --linkedin: #0a66c2;
+      --text:     #e2e8f0;
+      --muted:    #8892a4;
+      --dim:      #4a5568;
+      --mono:     'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Top bar */
+    .topbar {
+      background: rgba(8,12,24,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-s);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .topbar a:hover { color: var(--text); }
+
+    .topbar-right { display: flex; gap: 0.75rem; }
+
+    .topbar-link-resume {
+      background: var(--cyan-dim);
+      color: var(--cyan) !important;
+      border: 1px solid rgba(0,212,255,0.25);
+      padding: 0.35rem 0.9rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .topbar-link-resume:hover {
+      background: var(--cyan) !important;
+      color: #080c18 !important;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse at center, rgba(10,102,194,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: #0a66c2;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .li-icon {
+      width: 20px; height: 20px;
+      background: #0a66c2;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 900;
+      font-family: serif;
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+
+    .hero h1 span { color: var(--cyan); }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Section */
+    .guide-section {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-s);
+    }
+
+    .guide-section:last-child { border-bottom: none; }
+
+    /* Section header */
+    .gs-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gs-number {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,212,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .gs-number.purple { background: rgba(124,58,237,0.15); border-color: rgba(124,58,237,0.3); color: #a78bfa; }
+    .gs-number.green  { background: rgba(34,211,160,0.1);  border-color: rgba(34,211,160,0.3); color: var(--green); }
+    .gs-number.orange { background: rgba(251,146,60,0.1);  border-color: rgba(251,146,60,0.3); color: #fb923c; }
+
+    .gs-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .gs-subtitle {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    /* Copy block */
+    .copy-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-s);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .copy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border-s);
+    }
+
+    .copy-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .copy-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); }
+    .copy-dot.green  { background: var(--green); }
+    .copy-dot.purple { background: #a78bfa; }
+    .copy-dot.orange { background: #fb923c; }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid var(--border-s);
+      color: var(--muted);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: var(--mono);
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+    .copy-btn.copied { border-color: var(--green); color: var(--green); }
+
+    .copy-body {
+      padding: 1.1rem 1.2rem;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.75;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .copy-body .hl-cyan   { color: var(--cyan);   font-weight: 600; }
+    .copy-body .hl-green  { color: var(--green);  font-weight: 600; }
+    .copy-body .hl-purple { color: #a78bfa; font-weight: 600; }
+    .copy-body .hl-orange { color: #fb923c; font-weight: 600; }
+
+    /* Tip cards */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .tip-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-s);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .tip-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    .tip-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .tip-title { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .tip-body  { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+    .tip-body strong { color: var(--cyan); font-weight: 600; }
+
+    /* Skills list */
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+
+    .chip-cyan   { background: var(--cyan-dim);          border-color: rgba(0,212,255,0.25);     color: var(--cyan); }
+    .chip-purple { background: rgba(124,58,237,0.12);    border-color: rgba(124,58,237,0.3);     color: #a78bfa; }
+    .chip-teal   { background: rgba(34,211,160,0.08);    border-color: rgba(34,211,160,0.25);    color: var(--green); }
+    .chip-orange { background: rgba(251,146,60,0.1);     border-color: rgba(251,146,60,0.25);    color: #fb923c; }
+    .chip-slate  { background: rgba(100,116,139,0.12);   border-color: rgba(100,116,139,0.2);    color: #94a3b8; }
+
+    /* Priority badge */
+    .priority {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .priority-high   { background: rgba(239,68,68,0.15);  border:1px solid rgba(239,68,68,0.3);  color:#fca5a5; }
+    .priority-med    { background: rgba(251,146,60,0.12); border:1px solid rgba(251,146,60,0.3); color:#fb923c; }
+    .priority-low    { background: rgba(34,211,160,0.1);  border:1px solid rgba(34,211,160,0.3); color:var(--green); }
+
+    /* CTA banner */
+    .cta-banner {
+      margin: 3rem 0;
+      background: linear-gradient(135deg, rgba(10,102,194,0.15), rgba(0,212,255,0.08));
+      border: 1px solid rgba(10,102,194,0.3);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-banner h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .cta-banner p  { font-size: 0.88rem; color: var(--muted); }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0a66c2;
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .cta-btn:hover { background: #0855a5; transform: translateY(-2px); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--dim);
+      border-top: 1px solid var(--border-s);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <a href="index.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Portfolio
+    </a>
+    <div class="topbar-right">
+      <a href="resume.html" class="topbar-link-resume">View Resume →</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-label">
+      <span class="li-icon">in</span>
+      LinkedIn Profile Optimization Guide
+    </p>
+    <h1>Make Recruiters <span>Stop Scrolling</span></h1>
+    <p>Every field below is copy-ready. Paste it in, tweak as needed, and watch your profile views climb.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ── 1. HEADLINE ─────────────────────────────────────── -->
+    <div class="guide-section">
+      <div class="gs-header">
+        <div class="gs-number">01</div>
+        <div>
+          <p class="gs-title">Headline <span class="priority priority-high">Highest Impact</span></p>
+          <p class="gs-subtitle">Shows up in every search result, message, and comment. This is your hook.</p>
+        </div>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-header">
+          <span class="copy-label"><span class="copy-dot"></span>headline · 220 chars max</span>
+          <button class="copy-btn" onclick="copyText(this, 'headlineText')">Copy</button>
+        </div>
+        <div class="copy-body" id="headlineText">Cybersecurity &amp; Data Analytics | Blue Team · Threat Detection · Secure Dev | NSU '26 | Open to Cybersecurity &amp; IT Roles</div>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🎯</div>
+          <p class="tip-title">Why this works</p>
+          <p class="tip-body">Front-loads the two fields recruiters search for. The pipe separators make it scannable in 2 seconds. Closing with "Open to…" signals availability without sounding desperate.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🚫</div>
+          <p class="tip-title">What to avoid</p>
+          <p class="tip-body"><strong>"Student at NSU"</strong> — wastes prime real estate. <strong>"Aspiring…"</strong> — undermines confidence. Lead with what you <em>do</em>, not what you hope to become.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2. ABOUT ────────────────────────────────────────── -->
+    <div class="guide-section">
+      <div class="gs-header">
+        <div class="gs-number purple">02</div>
+        <div>
+          <p class="gs-title">About / Summary <span class="priority priority-high">Highest Impact</span></p>
+          <p class="gs-subtitle">Paste this in the About section. Opens with a hook, closes with a clear CTA.</p>
+        </div>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-header">
+          <span class="copy-label"><span class="copy-dot purple"></span>about · ~2,600 chars</span>
+          <button class="copy-btn" onclick="copyText(this, 'aboutText')">Copy</button>
+        </div>
+        <div class="copy-body" id="aboutText">I don't just study cybersecurity — I build systems that stop threats before they start.
+
+I'm a Cybersecurity Management student at Nova Southeastern University (graduating May 2026) with a minor in Data Analytics and a track record of delivering real security work across consulting, competition, and independent research.
+
+🔒 <span class="hl-cyan">What I do:</span>
+Currently working as a Cybersecurity Consultant &amp; Front End Programmer at Cari-Med Limited, where I assess enterprise security posture, identify vulnerabilities, and build secure internal tooling. I translate complex risk findings into clear, actionable roadmaps for technical and non-technical stakeholders alike.
+
+🏆 <span class="hl-green">Competition:</span>
+Competed in the NCAE Cyber Games as a blue team defender — capturing flags through Splunk log forensics, reverse engineering, hash cracking (John the Ripper), and multi-stage cipher decoding (CyberChef, dCode) inside live virtualized Linux environments.
+
+🛠️ <span class="hl-purple">What I build:</span>
+• Project Ejay — an ML-powered ransomware detection system that catches threats BEFORE encryption begins
+• StintMind — a Python/PyQt6 desktop app with real-time AI race strategy and AES-256-GCM + HMAC-SHA256 security architecture for competitive motorsports teams
+
+🎮 <span class="hl-orange">Unique angle:</span>
+I have deep knowledge of the PC gaming cheat ecosystem — external/internal cheats, aimbots, wall hacks, and anti-cheat bypass techniques — giving me a valuable perspective for game security, anti-cheat engineering, and software integrity roles.
+
+💡 <span class="hl-cyan">Skills at a glance:</span>
+Python · PyQt6 · Splunk · Wireshark · Reverse Engineering · Linux · SQL · Machine Learning · AES-256-GCM · Blue Team · Malware Analysis · HTML/CSS/JS
+
+📫 Open to: cybersecurity internships, blue team / SOC roles, anti-cheat engineering, and security-focused dev positions.
+→ josegmatoswork@gmail.com | Portfolio: josematos.dev</div>
+      </div>
+    </div>
+
+    <!-- ── 3. EXPERIENCE ───────────────────────────────────── -->
+    <div class="guide-section">
+      <div class="gs-header">
+        <div class="gs-number green">03</div>
+        <div>
+          <p class="gs-title">Experience Entries <span class="priority priority-high">Highest Impact</span></p>
+          <p class="gs-subtitle">Each role description — copy into the corresponding LinkedIn position.</p>
+        </div>
+      </div>
+
+      <!-- Cari-Med Consultant -->
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem;font-family:var(--mono);">// Role 1 · Current</p>
+      <div class="copy-block" style="margin-bottom:1.25rem">
+        <div class="copy-header">
+          <span class="copy-label"><span class="copy-dot green"></span>Cybersecurity Consultant &amp; Front End Programmer · Cari-Med Limited · 2025–Present</span>
+          <button class="copy-btn" onclick="copyText(this, 'exp1Text')">Copy</button>
+        </div>
+        <div class="copy-body" id="exp1Text">Serving as a dual-role cybersecurity consultant and front-end programmer at a medical supplies enterprise operating across the Caribbean region.
+
+🔐 Security:
+▸ Assess enterprise systems and networks for vulnerabilities, delivering prioritized remediation roadmaps to IT leadership and executive management
+▸ Implement security controls aligned with the CIA triad — confidentiality, integrity, and availability — across internal platforms
+▸ Produce formal risk reports and security documentation adopted as policy
+
+💻 Development:
+▸ Design and build front-end interfaces (HTML, CSS, JavaScript) for internal tools and client-facing applications — security embedded at the code level
+▸ Enforce secure development practices: input validation, authentication hardening, and safe data-handling patterns
+▸ Bridge technical requirements and user experience, communicating security trade-offs clearly to non-technical stakeholders</div>
+      </div>
+
+      <!-- NCAE -->
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem;font-family:var(--mono);">// Role 2 · Competition</p>
+      <div class="copy-block" style="margin-bottom:1.25rem">
+        <div class="copy-header">
+          <span class="copy-label"><span class="copy-dot purple"></span>Blue Team Competitor · NCAE Cyber Games · 2024–2025</span>
+          <button class="copy-btn" onclick="copyText(this, 'exp2Text')">Copy</button>
+        </div>
+        <div class="copy-body" id="exp2Text">Competed nationally in the NCAE Cyber Games — a high-pressure collegiate cybersecurity competition focused on defending live infrastructure against active red team attacks.
+
+🏆 Key achievements:
+▸ Captured flags through real-time log analysis, encoded payload decoding, and attacker-activity tracing in Splunk SIEM
+▸ Applied reverse engineering to analyze obfuscated binaries and recover hidden data
+▸ Cracked password hashes using John the Ripper; decoded multi-stage cipher challenges with CyberChef and dCode
+▸ Operated across multiple virtualized Linux VMs simultaneously during live defense scenarios
+
+Tools: Splunk · Wireshark · John the Ripper · CyberChef · dCode · Linux · Virtual Machines</div>
+      </div>
+
+      <!-- IT Intern -->
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem;font-family:var(--mono);">// Role 3 · Internship</p>
+      <div class="copy-block">
+        <div class="copy-header">
+          <span class="copy-label"><span class="copy-dot"></span>IT Intern · Cari-Med Limited · 2024</span>
+          <button class="copy-btn" onclick="copyText(this, 'exp3Text')">Copy</button>
+        </div>
+        <div class="copy-body" id="exp3Text">Gained enterprise IT experience supporting daily operations for a Caribbean medical supplies company with multi-site infrastructure.
+
+▸ Delivered first-line technical support across hardware, software, and network systems for 50+ staff
+▸ Managed network operations: user access provisioning, connectivity troubleshooting, and equipment lifecycle documentation
+▸ Assisted with data backups, basic security checks, and system maintenance in a live enterprise environment
+▸ Collaborated with senior IT staff on upgrades, patches, and routine maintenance initiatives</div>
+      </div>
+    </div>
+
+    <!-- ── 4. PROJECTS ─────────────────────────────────────── -->
+    <div class="guide-section">
+      <div class="gs-header">
+        <div class="gs-number orange">04</div>
+        <div>
+          <p class="gs-title">Projects Section <span class="priority priority-med">High Impact</span></p>
+          <p class="gs-subtitle">Add these under LinkedIn's "Projects" section. Link to your portfolio.</p>
+        </div>
+      </div>
+
+      <div class="copy-block" style="margin-bottom:1.25rem">
+        <div class="copy-header">
+          <span class="copy-label"><span class="copy-dot orange"></span>Project Ejay — Ransomware Detection</span>
+          <button class="copy-btn" onclick="copyText(this, 'proj1Text')">Copy</button>
+        </div>
+        <div class="copy-body" id="proj1Text">Early-Stage Ransomware Detection System — Python · Machine Learning · Behavioral Analysis
+
+A prototype that detects ransomware BEFORE file encryption begins by monitoring system, file, and process behavior in real time. An ML classifier (Python) distinguishes normal activity from malicious patterns — enabling intervention at the earliest possible threat stage.
+
+Dec 2025 – Present · Nova Southeastern University
+🔗 josematos.dev/#projects</div>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-header">
+          <span class="copy-label"><span class="copy-dot purple"></span>StintMind — AI Race Strategy Platform</span>
+          <button class="copy-btn" onclick="copyText(this, 'proj2Text')">Copy</button>
+        </div>
+        <div class="copy-body" id="proj2Text">AI-Driven Motorsport Strategy &amp; Security Platform — Python · PyQt6 · Machine Learning · AES-256-GCM
+
+Python desktop app delivering real-time AI race strategy for competitive motorsport teams in iRacing and Le Mans Ultimate. Processes 60 Hz shared-memory telemetry to predict tire degradation, fuel burn, and lap-time evolution. Security built on AES-256-GCM encryption + HMAC-SHA256 frame integrity — CIA-triad architecture from the ground up.
+
+May 2026 – Jul 2026
+🔗 josematos.dev/#projects</div>
+      </div>
+    </div>
+
+    <!-- ── 5. SKILLS ───────────────────────────────────────── -->
+    <div class="guide-section">
+      <div class="gs-header">
+        <div class="gs-number">05</div>
+        <div>
+          <p class="gs-title">Skills to Add <span class="priority priority-med">High Impact</span></p>
+          <p class="gs-subtitle">LinkedIn's algorithm surfaces you in recruiter searches based on skills. Add all of these — then ask peers to endorse the top ones.</p>
+        </div>
+      </div>
+
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.75rem;">Add in this order — LinkedIn shows the first 3 prominently:</p>
+
+      <div class="skill-chips">
+        <span class="chip chip-cyan">Cybersecurity</span>
+        <span class="chip chip-cyan">Threat Detection &amp; Response</span>
+        <span class="chip chip-cyan">Blue Team Operations</span>
+        <span class="chip chip-cyan">Splunk</span>
+        <span class="chip chip-cyan">Wireshark</span>
+        <span class="chip chip-cyan">Reverse Engineering</span>
+        <span class="chip chip-cyan">Malware Analysis</span>
+        <span class="chip chip-cyan">Network Security</span>
+        <span class="chip chip-slate">Python</span>
+        <span class="chip chip-slate">SQL</span>
+        <span class="chip chip-slate">HTML/CSS/JavaScript</span>
+        <span class="chip chip-slate">Machine Learning</span>
+        <span class="chip chip-slate">Data Analysis</span>
+        <span class="chip chip-teal">Linux</span>
+        <span class="chip chip-teal">Windows Server Administration</span>
+        <span class="chip chip-teal">Virtual Machines</span>
+        <span class="chip chip-teal">OS Internals</span>
+        <span class="chip chip-purple">Security Consulting</span>
+        <span class="chip chip-purple">Risk Assessment</span>
+        <span class="chip chip-purple">Security Documentation</span>
+        <span class="chip chip-orange">Game Security</span>
+        <span class="chip chip-orange">Anti-Cheat Systems</span>
+      </div>
+    </div>
+
+    <!-- ── 6. QUICK WINS ───────────────────────────────────── -->
+    <div class="guide-section">
+      <div class="gs-header">
+        <div class="gs-number green">06</div>
+        <div>
+          <p class="gs-title">Profile Quick Wins <span class="priority priority-low">Do These Today</span></p>
+          <p class="gs-subtitle">Settings and structural changes that boost visibility with zero writing required.</p>
+        </div>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">📸</div>
+          <p class="tip-title">Profile Photo</p>
+          <p class="tip-body">Professional headshot with a clean background. LinkedIn profiles with photos get <strong>21× more views</strong>. Wear what you'd wear to an interview.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🖼️</div>
+          <p class="tip-title">Banner / Cover Image</p>
+          <p class="tip-body">Use a dark cybersecurity-themed banner — a terminal screenshot, a network map, or a custom graphic with your name and tagline. Free: Canva.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🔗</div>
+          <p class="tip-title">Custom URL</p>
+          <p class="tip-body">Set it to <strong>linkedin.com/in/jose-matos-cyber</strong> or similar. Looks professional on resumes and email signatures.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🟢</div>
+          <p class="tip-title">"Open to Work" Frame</p>
+          <p class="tip-body">Enable it — visible to recruiters only if you prefer. Add roles: <strong>Cybersecurity Analyst, SOC Analyst, IT Security Specialist, Anti-Cheat Engineer.</strong></p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">⭐</div>
+          <p class="tip-title">Featured Section</p>
+          <p class="tip-body">Add your portfolio link (<strong>josematos.dev</strong>) and resume PDF as Featured items. This puts them above the fold on your profile.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🎓</div>
+          <p class="tip-title">NSU &amp; Activities</p>
+          <p class="tip-body">Add NCAE Cyber Games as an <strong>Activity / Extracurricular</strong> under your NSU education entry. Recruiters scan education for clubs and competitions.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">✍️</div>
+          <p class="tip-title">Post Weekly</p>
+          <p class="tip-body">Share one short post per week — a CTF you completed, a tool you learned, a security news take. Consistent activity multiplies profile views.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🤝</div>
+          <p class="tip-title">Ask for Endorsements</p>
+          <p class="tip-body">Message 3–5 classmates or colleagues and swap skill endorsements. Prioritize: <strong>Python, Cybersecurity, Splunk, Linux.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA banner -->
+    <div class="cta-banner">
+      <div>
+        <h3>Ready to update your profile?</h3>
+        <p>All the copy above is recruiter-optimized and ready to paste. Takes about 20 minutes total.</p>
+      </div>
+      <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" class="cta-btn">
+        <span class="li-icon" style="width:18px;height:18px;font-size:0.65rem;">in</span>
+        Open LinkedIn
+      </a>
+    </div>
+
+  </div><!-- /container -->
+
+  <footer>
+    <p>Jose Matos · LinkedIn Optimization Guide · <a href="index.html" style="color:var(--cyan);text-decoration:none;">josematos.dev</a></p>
+  </footer>
+
+  <script>
+    function copyText(btn, id) {
+      const el = document.getElementById(id);
+      // Strip HTML tags for clean plain text copy
+      const text = el.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '✓ Copied';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
