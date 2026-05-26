@@ -2,7 +2,7 @@
 
 Personal portfolio website for Jose Matos, Cybersecurity Management student at Nova Southeastern University (graduating May 2026).
 
-**Live site:** [josematos.dev](https://josematos.dev) *(update this URL once deployed)*
+**Live site:** [josizino.github.io](https://josizino.github.io)
 
 ---
 
@@ -28,54 +28,56 @@ Jose_Matos_Resume.docx — Downloadable one-page resume
 
 ## Deploy to GitHub Pages
 
-### Option A — Username site (recommended, clean URL)
+### Step 1 — Create the repo on GitHub
 
-1. Create a GitHub repo named exactly **`YOUR_USERNAME.github.io`**
-2. Push this folder to the `main` branch:
+1. Go to [github.com/new](https://github.com/new)
+2. Name the repo exactly: **`Josizino.github.io`**
+3. Set to **Public**
+4. Leave all checkboxes unchecked (no README, no .gitignore)
+5. Click **Create repository**
+
+### Step 2 — Push from Terminal
 
 ```bash
-cd portfolio-website
-git init
-git add .
-git commit -m "Initial portfolio site"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
+cd /Users/josematos/portfolio-website
+git remote add origin https://github.com/Josizino/Josizino.github.io.git
 git push -u origin main
 ```
 
-3. Go to **Settings → Pages** and confirm Source is set to `main` / `/ (root)`
-4. Your site is live at `https://YOUR_USERNAME.github.io` within ~60 seconds
+When prompted for a password, use a **Personal Access Token** (not your GitHub password):  
+GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → check `repo` scope → copy and paste as password.
 
-### Option B — Project site (any repo name)
+### Step 3 — Enable Pages
 
-Same steps as above but use any repo name. Your site will be at:
-`https://YOUR_USERNAME.github.io/REPO_NAME/`
+1. Go to `github.com/Josizino/Josizino.github.io` → **Settings → Pages**
+2. Source: **Deploy from a branch → main → / (root)**
+3. Click **Save**
 
-*(All links are relative so both options work without any code changes.)*
+Site goes live at **https://josizino.github.io** within ~60 seconds.
+
+---
+
+## Updating the site
+
+```bash
+cd /Users/josematos/portfolio-website
+git add .
+git commit -m "Describe your change"
+git push
+```
+
+GitHub Pages rebuilds automatically — live in ~30 seconds.
 
 ---
 
 ## Custom Domain (optional)
 
-1. Create a file named `CNAME` in this folder containing just your domain:
+1. Create a `CNAME` file containing your domain:
    ```
-   josematos.dev
+   yourdomain.com
    ```
-2. Point your domain's DNS to GitHub Pages (see [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site))
+2. Configure your DNS to point to GitHub Pages
 3. Enable "Enforce HTTPS" in repo Settings → Pages
-
----
-
-## Local Development
-
-No build step needed — pure HTML/CSS/JS.
-
-```bash
-# Python (built-in)
-python3 -m http.server 3000
-
-# Then open http://localhost:3000
-```
 
 ---
 
@@ -83,6 +85,6 @@ python3 -m http.server 3000
 
 - Pure HTML5 / CSS3 / Vanilla JS — no frameworks, no dependencies
 - Google Fonts: Inter + JetBrains Mono
-- Particle canvas animation (custom, `js/main.js`)
+- Particle canvas animation (custom)
 - Fully responsive — mobile, tablet, desktop
 - Accessible — semantic HTML, ARIA labels, keyboard navigable
