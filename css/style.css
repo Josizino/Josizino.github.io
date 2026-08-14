@@ -2,23 +2,28 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:          #080c18;
-  --bg-alt:      #0c1124;
-  --bg-card:     #0f1629;
-  --bg-card-2:   #131b35;
-  --border:      rgba(0, 212, 255, 0.12);
-  --border-soft: rgba(255, 255, 255, 0.07);
+  --bg:          #09090C;
+  --bg-alt:      #0D0D11;
+  --bg-card:     #131318;
+  --bg-card-2:   #1A1A20;
+  --border:      rgba(255, 128, 0, 0.2);
+  --border-soft: rgba(255, 255, 255, 0.08);
 
-  --cyan:        #00d4ff;
-  --cyan-dim:    rgba(0, 212, 255, 0.15);
-  --cyan-glow:   rgba(0, 212, 255, 0.35);
-  --purple:      #7c3aed;
-  --purple-dim:  rgba(124, 58, 237, 0.18);
-  --green:       #22d3a0;
+  /* Primary — Racing Orange (McLaren / IndyCar) */
+  --cyan:        #FF8000;
+  --cyan-dim:    rgba(255, 128, 0, 0.13);
+  --cyan-glow:   rgba(255, 128, 0, 0.5);
 
-  --text:        #e2e8f0;
-  --text-muted:  #8892a4;
-  --text-dim:    #4a5568;
+  /* Secondary — F1 / NASCAR Red */
+  --purple:      #E10600;
+  --purple-dim:  rgba(225, 6, 0, 0.14);
+
+  /* Active / Current — IMSA Racing Green */
+  --green:       #00A651;
+
+  --text:        #F0F0F2;
+  --text-muted:  #8A8A9A;
+  --text-dim:    #4A4A5A;
 
   --font-sans:   'Inter', system-ui, sans-serif;
   --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
@@ -1300,3 +1305,210 @@ ul { list-style: none; }
   .about-stats { flex-wrap: wrap; gap: 1.25rem; }
   .hero-actions { flex-direction: column; align-items: center; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOTORSPORT THEME — overrides & new racing styles
+   Colors: F1 Red · Racing Orange · IMSA Blue · Racing Green
+   ═══════════════════════════════════════════════════════════ */
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb:hover { background: var(--cyan-dim); }
+
+/* Dark bg used as text color on lit buttons */
+.btn-primary { color: #09090C; }
+.btn-primary:hover { color: #09090C; box-shadow: 0 0 40px var(--cyan-glow); }
+.nav-cta:hover { color: #09090C !important; }
+.contact-card:hover .contact-icon { color: #09090C; }
+
+/* Navbar */
+#navbar.scrolled { background: rgba(9, 9, 12, 0.94); }
+.nav-links { background: transparent; }
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav-links { background: rgba(9, 9, 12, 0.97); }
+}
+
+/* Nav links — racing stripe underline sweep */
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0.85rem; right: 0.85rem;
+  height: 2px;
+  background: var(--cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s ease;
+  border-radius: 1px;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+/* Hero — red/orange spotlight & speed lines */
+#hero::after {
+  background: radial-gradient(ellipse at center,
+    rgba(225, 6, 0, 0.09) 0%,
+    rgba(255, 128, 0, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+/* Subtle diagonal speed lines behind hero particles */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -60deg,
+    transparent,
+    transparent 60px,
+    rgba(255, 128, 0, 0.018) 60px,
+    rgba(255, 128, 0, 0.018) 61px
+  );
+}
+
+/* Profile card */
+.profile-card:hover { box-shadow: 0 0 40px rgba(255, 128, 0, 0.08); }
+
+/* Section label — bold orange racing stripe left-bar */
+.section-label {
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--cyan);
+}
+
+/* ── Skill cards — racing livery top stripes (always visible) ── */
+.skill-card::before {
+  top: 0; bottom: auto;
+  transform: scaleX(1);   /* always on */
+  height: 3px;
+}
+/* F1 Red → Orange — Programming & Data */
+.skills-grid .skill-card:nth-child(1)::before {
+  background: linear-gradient(90deg, #E10600, #FF8000);
+}
+/* IMSA Blue — Cybersecurity */
+.skills-grid .skill-card:nth-child(2)::before {
+  background: linear-gradient(90deg, #003DA5, #0066CC);
+}
+/* Silver — Systems */
+.skills-grid .skill-card:nth-child(3)::before {
+  background: linear-gradient(90deg, #888, #C8C8C8);
+}
+/* Orange → Gold — IT Support */
+.skills-grid .skill-card:nth-child(4)::before {
+  background: linear-gradient(90deg, #FF8000, #FFB300);
+}
+/* Gold → Red — Game Security */
+.skills-grid .skill-card:nth-child(5)::before {
+  background: linear-gradient(90deg, #FFB300, #E10600);
+}
+/* Racing Green — Professional */
+.skills-grid .skill-card:nth-child(6)::before {
+  background: linear-gradient(90deg, #00A651, #00D46A);
+}
+/* Skill card hover glow border */
+.skill-card:hover .skill-card-icon { border-color: rgba(255, 128, 0, 0.4); }
+
+/* Tags */
+.tag-accent {
+  background: rgba(255, 128, 0, 0.12);
+  border-color: rgba(255, 128, 0, 0.28);
+  color: #FF8000;
+}
+/* tag-purple → IMSA Blue for systems */
+.tag-purple {
+  background: rgba(0, 61, 165, 0.14);
+  border-color: rgba(0, 100, 210, 0.3);
+  color: #5599FF;
+}
+/* tag-game → NASCAR / checkered-flag Gold */
+.tag-game {
+  background: rgba(255, 185, 0, 0.1);
+  border-color: rgba(255, 185, 0, 0.28);
+  color: #FFB900;
+}
+.skill-card-game {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255, 185, 0, 0.04) 100%);
+}
+.skill-card-icon-game {
+  background: rgba(255, 185, 0, 0.1);
+  border-color: rgba(255, 185, 0, 0.28);
+  color: #FFB900;
+}
+.skill-card-game::before {
+  background: linear-gradient(90deg, #FFB300, #E10600) !important;
+}
+
+/* ── Timeline ── */
+.timeline-dot-current {
+  background: #00A651;
+  box-shadow: 0 0 14px rgba(0, 166, 81, 0.65);
+}
+.timeline-content-current  { border-color: rgba(0, 166, 81, 0.22); }
+.timeline-content-current:hover {
+  border-color: #00A651;
+  box-shadow: 0 8px 32px rgba(0, 166, 81, 0.07);
+}
+.timeline-date-current {
+  background: rgba(0, 166, 81, 0.1);
+  border-color: rgba(0, 166, 81, 0.3);
+  color: #00A651;
+}
+.timeline-dot-competition {
+  background: #E10600;
+  box-shadow: 0 0 14px rgba(225, 6, 0, 0.6);
+}
+.timeline-content-competition { border-color: rgba(225, 6, 0, 0.2); }
+.timeline-content-competition:hover {
+  border-color: #E10600;
+  box-shadow: 0 8px 32px rgba(225, 6, 0, 0.08);
+}
+.timeline-intro { border-left-color: rgba(225, 6, 0, 0.3); }
+.role-badge-inline {
+  background: rgba(225, 6, 0, 0.12);
+  border-color: rgba(225, 6, 0, 0.32);
+  color: #FF5555;
+}
+
+/* ── Projects ── */
+.project-card-featured .project-card-inner { border-color: rgba(255, 128, 0, 0.22); }
+.project-card-featured .project-card-inner:hover {
+  border-color: #FF8000;
+  box-shadow: 0 0 40px rgba(255, 128, 0, 0.12);
+}
+.project-glow {
+  background: radial-gradient(circle, rgba(255, 128, 0, 0.1) 0%, transparent 70%);
+}
+.project-icon { border-color: rgba(255, 128, 0, 0.3); }
+.project-badge {
+  background: rgba(0, 166, 81, 0.12);
+  border-color: rgba(0, 166, 81, 0.3);
+}
+/* StintMind (2nd card) — F1 Red accent */
+.project-glow-purple {
+  background: radial-gradient(circle, rgba(225, 6, 0, 0.1) 0%, transparent 70%);
+}
+.project-icon-purple {
+  background: rgba(225, 6, 0, 0.12);
+  border-color: rgba(225, 6, 0, 0.3);
+  color: #FF5050;
+}
+.project-badge-purple {
+  background: rgba(255, 128, 0, 0.12);
+  border-color: rgba(255, 128, 0, 0.3);
+  color: #FF8000;
+}
+.project-card-featured:nth-child(2) .project-card-inner { border-color: rgba(225, 6, 0, 0.2); }
+.project-card-featured:nth-child(2) .project-card-inner:hover {
+  border-color: #E10600;
+  box-shadow: 0 0 40px rgba(225, 6, 0, 0.1);
+}
+
+/* ── Education ── */
+.edu-logo { border-color: rgba(255, 128, 0, 0.28); }
+
+/* ── Contact ── */
+.contact-card:hover { box-shadow: 0 12px 32px rgba(255, 128, 0, 0.1); }
+.contact-icon { border-color: rgba(255, 128, 0, 0.22); }

@@ -22,11 +22,12 @@ navLinks.querySelectorAll('a').forEach(link => {
 
 /* ── Typing animation ─────────────────────────────────────── */
 const phrases = [
-  'cybersecurity_student',
-  'threat_hunter',
-  'data_analyst',
+  'cybersecurity_professional',
   'blue_team_defender',
+  'race_strategy_engineer',
   'python_developer',
+  'threat_hunter',
+  'simracer_&_builder',
 ];
 
 let phraseIdx = 0, charIdx = 0, deleting = false;
@@ -143,7 +144,7 @@ sections.forEach(s => sectionObserver.observe(s));
 
   const PARTICLE_COUNT = 55;
   const MAX_DIST       = 130;
-  const COLORS         = ['rgba(0,212,255,', 'rgba(124,58,237,', 'rgba(34,211,160,'];
+  const COLORS         = ['rgba(255,128,0,', 'rgba(225,6,0,', 'rgba(0,166,81,', 'rgba(255,185,0,'];
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
@@ -193,7 +194,7 @@ sections.forEach(s => sectionObserver.observe(s));
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,212,255,${alpha})`;
+          ctx.strokeStyle = `rgba(255,128,0,${alpha})`;
           ctx.lineWidth   = 0.6;
           ctx.stroke();
         }
