@@ -1829,3 +1829,63 @@ ul { list-style: none; }
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ── Hero v2 centering fixes ─────────────────────────────── */
+#hero {
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.hero-content {
+  text-align: left;
+  max-width: 680px;
+  padding: 0;
+  padding-top: 0;
+}
+
+.hero-name {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2.8rem, 7vw, 5rem) !important;
+  font-weight: 800 !important;
+  color: var(--text) !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  margin-bottom: 0.3rem !important;
+  text-shadow: none !important;
+}
+
+.hero-role {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem) !important;
+  font-weight: 600 !important;
+  color: var(--cyan) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1.5rem !important;
+  text-transform: none !important;
+}
+
+.hero-available {
+  text-align: left !important;
+}
+
+.hero-tagline {
+  text-align: left !important;
+  font-size: 1.05rem !important;
+  color: var(--text-muted) !important;
+  max-width: 520px !important;
+  margin-bottom: 2.25rem !important;
+  line-height: 1.7 !important;
+}
+
+.hero-actions {
+  justify-content: flex-start !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hide old hero elements that no longer exist in HTML */
+.hero-eyebrow,
+.hero-scroll-hint,
+.hero-badge-cluster,
+.floating-badge,
+#particleCanvas { display: none !important; }
