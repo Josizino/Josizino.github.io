@@ -311,12 +311,12 @@ ul { list-style: none; }
 /* ── HERO ─────────────────────────────────────────────────── */
 #hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  padding: 6rem 1.5rem 4rem;
+  padding: 0;
 }
 
 #particleCanvas {
@@ -346,8 +346,8 @@ ul { list-style: none; }
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 800px;
+  text-align: left;
+  max-width: 680px;
 }
 
 .hero-eyebrow {
