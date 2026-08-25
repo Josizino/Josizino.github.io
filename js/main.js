@@ -71,17 +71,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* ── Tilt on project cards ────────────────────────────────── */
-document.querySelectorAll('.project-card-featured').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x    = (e.clientX - rect.left) / rect.width  - 0.5;
-    const y    = (e.clientY - rect.top)  / rect.height - 0.5;
-    card.style.transform = `perspective(900px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-4px)`;
-  });
-  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-});
-
 /* ── Reduced motion: disable all transitions ─────────────── */
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
