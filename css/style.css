@@ -25,8 +25,9 @@
   --text-muted:  #8A8A9A;
   --text-dim:    #4A4A5A;
 
-  --font-sans:   'Inter', system-ui, sans-serif;
-  --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
   --radius:      12px;
   --radius-lg:   20px;
@@ -67,8 +68,9 @@ ul { list-style: none; }
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
@@ -1561,4 +1563,269 @@ ul { list-style: none; }
 .project-link-btn:hover {
   color: var(--cyan);
   border-color: var(--border);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   REDESIGN v2 — hero, about, nav, misc overrides
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Nav active state ─────────────────────────────────────── */
+.nav-links a.nav-active { color: var(--cyan); }
+
+/* ── Hero v2 ──────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* Remove any old canvas / particle styles */
+  background: var(--bg);
+}
+
+/* Subtle technical grid background */
+.hero-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,128,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,128,0,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Hide old canvas if it ever reappears */
+#particleCanvas { display: none !important; }
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.hero-available {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.available-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  flex-shrink: 0;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.hero-role {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--cyan);
+  margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 2.25rem;
+}
+
+/* Override old hero-actions styles */
+#hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+/* ── Hero sidebar ─────────────────────────────────────────── */
+.hero-sidebar {
+  border-left: 1px solid var(--border-soft);
+  padding-left: 2.5rem;
+  align-self: center;
+}
+
+.hero-sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-sidebar-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  margin-bottom: -0.75rem;
+}
+
+.hero-caps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-caps-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border-soft);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.hero-caps-list li:hover {
+  color: var(--text);
+  border-color: var(--cyan);
+}
+
+.hero-sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.hero-sidebar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.hero-sidebar-link:hover { color: var(--cyan); }
+
+/* ── About v2 ─────────────────────────────────────────────── */
+.about-grid-v2 {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-body {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-top: 1rem;
+}
+
+.about-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding-top: 0.5rem;
+}
+
+.about-meta-group {
+  border-left: 2px solid var(--border-soft);
+  padding-left: 1.1rem;
+}
+
+.about-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cyan);
+  margin-bottom: 0.3rem;
+}
+
+.about-meta-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.about-meta-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.about-meta-link {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+  margin-bottom: 0.2rem;
+}
+
+.about-meta-link:hover { color: var(--cyan); }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  .hero-sidebar {
+    display: none;
+  }
+  .about-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-name {
+    font-size: 2.6rem;
+  }
+  .hero-role {
+    font-size: 1.3rem;
+  }
+  #hero .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .available-dot {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
