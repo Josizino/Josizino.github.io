@@ -3,574 +3,684 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jose Matos | Cybersecurity Graduate & IT Professional</title>
-  <meta name="description" content="Jose Matos — Cybersecurity Management graduate, Nova Southeastern University. Specializing in threat detection, software development, data analytics, and IT." />
 
-  <!-- Favicon -->
+  <title>Jose Matos | Cybersecurity Graduate &amp; IT Professional</title>
+  <meta name="description" content="Jose Matos, Cybersecurity Management graduate from Nova Southeastern University. Threat detection, blue team defense, secure software development, and enterprise IT." />
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#060F20" />
 
-  <!-- Open Graph / Social sharing -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Jose Matos | Cybersecurity Graduate & IT Professional" />
-  <meta property="og:description" content="Cybersecurity graduate, blue team competitor, and security-focused developer. Projects include ML-powered ransomware detection and real-time AI race strategy." />
-  <meta property="og:url"         content="https://josizino.github.io/" />
-  <meta property="og:image"       content="https://josizino.github.io/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jose Matos | Cybersecurity Graduate &amp; IT Professional" />
+  <meta property="og:description" content="Threat detection, blue team defense, secure software development, and enterprise IT." />
+  <meta property="og:url" content="https://josizino.github.io/" />
+  <meta property="og:image" content="https://josizino.github.io/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jose Matos | Cybersecurity Graduate &amp; IT Professional" />
+  <meta name="twitter:description" content="Threat detection, blue team defense, secure software development, and enterprise IT." />
+  <meta name="twitter:image" content="https://josizino.github.io/og-image.jpg" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Jose Matos | Cybersecurity Graduate & IT Professional" />
-  <meta name="twitter:description" content="Cybersecurity graduate, blue team competitor, and security-focused developer." />
-
-  <!-- Theme color (browser chrome on mobile) -->
-  <meta name="theme-color" content="#050D1C" />
-
-  <link rel="stylesheet" href="css/style-v2.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
 </head>
 <body>
 
-  <!-- ── NAV ────────────────────────────────────────────────── -->
-  <nav id="navbar" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Home">
-        <span class="logo-bracket">[</span>JM<span class="logo-bracket">]</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" role="list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="Jose_Matos_Resume.pdf" target="_blank">Resume</a></li>
-        <li><a href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ── HERO ───────────────────────────────────────────────── -->
-  <section id="hero" aria-label="Introduction">
-    <div class="hero-texture" aria-hidden="true"></div>
-    <div class="container hero-container">
-      <div class="hero-content">
-        <p class="hero-available">
-          <span class="available-dot" aria-hidden="true"></span>
-          Available for hire
+<!-- ══ NAV ═══════════════════════════════════════════════════ -->
+<header class="nav" id="nav">
+  <nav class="nav__inner" aria-label="Primary">
+    <a class="nav__mark" href="#top" aria-label="Jose Matos, back to top">JM</a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Menu">
+      <span></span>
+    </button>
+
+    <ul class="nav__list" id="navList">
+      <li><a class="nav__link" href="#about">About</a></li>
+      <li><a class="nav__link" href="#skills">Skills</a></li>
+      <li><a class="nav__link" href="#experience">Experience</a></li>
+      <li><a class="nav__link" href="#projects">Projects</a></li>
+      <li><a class="nav__link" href="#focus">Security</a></li>
+      <li><a class="nav__link" href="#education">Education</a></li>
+      <li><a class="nav__link" href="Jose_Matos_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><a class="nav__cta" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Sentinel for the sticky-nav observer. Keeps the nav state
+     change off any scroll listener. -->
+<div id="top" aria-hidden="true"></div>
+
+<main id="main">
+
+  <!-- ══ HERO ════════════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-name">
+    <div class="hero__inner">
+
+      <div class="hero__text">
+        <p class="key enter" style="--i:0">Cybersecurity &amp; IT</p>
+        <h1 class="hero__name enter" id="hero-name" style="--i:1">Jose Matos</h1>
+        <p class="hero__role enter" style="--i:2">Cybersecurity Graduate<br />&amp; IT Professional</p>
+        <p class="hero__blurb enter" style="--i:3">
+          Threat detection, secure software development, and enterprise IT, built across
+          live blue team competition, production infrastructure, and independent projects.
         </p>
-        <h1 class="hero-name">Jose Matos</h1>
-        <p class="hero-role">Cybersecurity Graduate<br>&amp; IT Professional</p>
-        <p class="hero-tagline">
-          Threat detection, software development, and IT — built across enterprise infrastructure, blue team competition, and personal projects.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="Jose_Matos_Resume.pdf" target="_blank" class="btn btn-ghost">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <div class="hero__actions enter" style="--i:4">
+          <a class="btn btn--primary" href="#projects">View Projects</a>
+          <a class="btn btn--ghost" href="Jose_Matos_Resume.pdf" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             Resume
           </a>
         </div>
       </div>
-      <div class="hero-sidebar" aria-hidden="true">
-        <div class="hero-sidebar-inner">
-          <p class="hero-sidebar-label">Core capabilities</p>
-          <ul class="hero-caps-list">
-            <li>Threat Detection</li>
-            <li>Blue Team Operations</li>
-            <li>Python / C# Development</li>
-            <li>IT Infrastructure</li>
-            <li>Machine Learning</li>
-            <li>Game Development</li>
-          </ul>
-          <div class="hero-sidebar-links">
-            <a href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer" class="hero-sidebar-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/jose-matos-036694281/" target="_blank" rel="noopener noreferrer" class="hero-sidebar-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-          </div>
+
+      <aside class="readout enter" style="--i:5" aria-label="At a glance">
+        <div class="readout__row">
+          <span class="key">Status</span>
+          <span class="readout__val"><span class="live">Open to full-time roles</span></span>
         </div>
-      </div>
+        <div class="readout__row">
+          <span class="key">Focus</span>
+          <span class="readout__val">Threat detection, secure development, IT infrastructure</span>
+        </div>
+        <div class="readout__row">
+          <span class="key">Degree</span>
+          <span class="readout__val">B.S. Cybersecurity Management, May 2026</span>
+        </div>
+        <div class="readout__row">
+          <span class="key">Based</span>
+          <span class="readout__val">Davie, Florida</span>
+        </div>
+
+        <div class="readout__links">
+          <a class="readout__link" href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            GitHub
+          </a>
+          <a class="readout__link" href="https://www.linkedin.com/in/jose-matos-036694281/" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </aside>
+
     </div>
   </section>
 
-  <!-- ── ABOUT ──────────────────────────────────────────────── -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="about-grid-v2">
-        <div class="about-text reveal">
-          <h2 class="section-title">About</h2>
-          <p class="about-lead">
-            B.S. Cybersecurity Management, Nova Southeastern University, May 2026 — with a minor in Data Analytics.
+  <!-- ══ ABOUT ═══════════════════════════════════════════════ -->
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="shell about">
+
+      <div class="reveal">
+        <h2 class="h-section" id="about-h">About</h2>
+        <p class="lede" style="margin-top: var(--space-6)">
+          I work where IT infrastructure, software development, and security operations meet.
+        </p>
+        <p class="prose" style="margin-top: var(--space-5)">
+          In practice that has meant enterprise help desk and network support at Cari-Med,
+          blue team defense in the NCAE Cyber Games, and independent projects in machine
+          learning, ransomware detection, and game development. I like problems where you
+          have to reason about what a system is actually doing underneath, whether that is
+          tracing an attacker through event logs or working out why a telemetry stream drifts.
+        </p>
+        <p class="prose">
+          Away from the keyboard I race competitively in iRacing and Le Mans Ultimate, train
+          consistently, and have spent time living in Jamaica and the United States and
+          travelling through Canada, France, and England.
+        </p>
+
+        <div class="about__seeking">
+          <span class="key">What I am looking for</span>
+          <p>
+            Full-time roles in <strong>cybersecurity</strong>, <strong>software development</strong>,
+            <strong>data analytics</strong>, and <strong>IT</strong>.
           </p>
-          <p class="about-body">
-            I work across IT infrastructure, software development, and security operations. In practice: enterprise help desk and network support at Cari-Med, blue team defense in the NCAE Cyber Games, and personal projects in machine learning, ransomware detection, and game development.
-          </p>
-          <p class="about-body">
-            Outside work I'm a competitive simracer in iRacing and Le Mans Ultimate, a consistent presence in the gym, and someone who's spent time living in Jamaica, the US, and traveling through Canada, France, and England.
-          </p>
-          <div class="seeking-block">
-            <span class="seeking-label">What I'm Looking For</span>
-            <p class="seeking-text">Seeking full-time roles in <strong>cybersecurity</strong>, <strong>software development</strong>, <strong>data analytics</strong>, and <strong>IT</strong>.</p>
-          </div>
-        </div>
-        <div class="about-meta reveal reveal-right">
-          <div class="about-meta-group">
-            <p class="about-meta-label">Education</p>
-            <p class="about-meta-value">NSU · Cybersecurity Management</p>
-            <p class="about-meta-sub">Minor in Data Analytics · 2022-2026</p>
-          </div>
-          <div class="about-meta-group">
-            <p class="about-meta-label">Experience</p>
-            <p class="about-meta-value">Junior IT Staff · Cari-Med</p>
-            <p class="about-meta-sub">Dec 2024 - June 2026 · Kingston, Jamaica</p>
-          </div>
-          <div class="about-meta-group">
-            <p class="about-meta-label">Contact</p>
-            <a href="mailto:josegmatoswork@gmail.com" class="about-meta-link">josegmatoswork@gmail.com</a>
-            <a href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer" class="about-meta-link">github.com/Josizino</a>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ── SKILLS ─────────────────────────────────────────────── -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// skills</span>
-        <h2 class="section-title">Technical Skills</h2>
-      </div>
-
-      <div class="skills-bento">
-
-        <div class="skill-card skill-card-featured reveal" style="--card-accent: var(--red);">
-          <div class="skill-card-head">
-            <svg class="skill-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <h3>Cybersecurity &amp; Networking</h3>
-            <span class="skill-count">10</span>
-          </div>
-          <p class="skill-note">Blue team defense, log analysis, and threat hunting — applied in live competition and enterprise environments.</p>
-          <div class="skill-tags">
-            <span class="tag">Wireshark</span>
-            <span class="tag">Splunk</span>
-            <span class="tag">Network Monitoring</span>
-            <span class="tag">Threat Detection</span>
-            <span class="tag">Blue Team</span>
-            <span class="tag">Reverse Engineering</span>
-            <span class="tag">Malware Handling</span>
-            <span class="tag">CyberChef</span>
-            <span class="tag">John the Ripper</span>
-            <span class="tag">Virtual Machines</span>
-          </div>
+      <div class="reveal" style="--reveal-delay: 90ms">
+        <div class="spine__row">
+          <span class="key">Education</span>
+          <span class="spine__name">Nova Southeastern University</span>
+          <span class="spine__sub">B.S. Cybersecurity Management, minor Data Analytics</span>
         </div>
-
-        <div class="skill-card reveal" style="--card-accent: var(--red);">
-          <div class="skill-card-head">
-            <svg class="skill-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <h3>Programming &amp; Data</h3>
-            <span class="skill-count">10</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Python</span>
-            <span class="tag">C#</span>
-            <span class="tag">.NET</span>
-            <span class="tag">PyQt6</span>
-            <span class="tag">Java</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-          </div>
+        <div class="spine__row">
+          <span class="key">Current role</span>
+          <span class="spine__name">Junior IT Staff, Cari-Med Limited</span>
+          <span class="spine__sub">Kingston, Jamaica</span>
         </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-head">
-            <svg class="skill-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <h3>Systems &amp; Platforms</h3>
-            <span class="skill-count">6</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Linux</span>
-            <span class="tag">Windows Admin</span>
-            <span class="tag">macOS</span>
-            <span class="tag">Processes &amp; Threads</span>
-            <span class="tag">Virtual Memory</span>
-            <span class="tag">OS Internals</span>
-          </div>
+        <div class="spine__row">
+          <span class="key">Competition</span>
+          <span class="spine__name">NCAE Cyber Games, Blue Team</span>
+          <span class="spine__sub">National collegiate cyber defense</span>
         </div>
-
-        <div class="skill-card reveal" style="--card-accent: var(--yellow);">
-          <div class="skill-card-head">
-            <svg class="skill-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1"/><circle cx="17" cy="13" r="1"/><rect x="2" y="6" width="20" height="12" rx="4"/></svg>
-            <h3>Game Security &amp; Anti-Cheat</h3>
-            <span class="skill-count">7</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">External Cheats</span>
-            <span class="tag">Internal Cheats</span>
-            <span class="tag">Wall Hacks</span>
-            <span class="tag">Aimbots</span>
-            <span class="tag">Modding</span>
-            <span class="tag">Cheat Detection</span>
-            <span class="tag">PC Cheat Ecosystems</span>
-          </div>
+        <div class="spine__row">
+          <span class="key">Reach me</span>
+          <a class="link spine__link" href="mailto:josegmatoswork@gmail.com">josegmatoswork@gmail.com</a>
+          <a class="link spine__link" href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer">github.com/Josizino</a>
         </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-head">
-            <svg class="skill-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <h3>IT &amp; Support</h3>
-            <span class="skill-count">4</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Help Desk</span>
-            <span class="tag">Troubleshooting</span>
-            <span class="tag">IT Documentation</span>
-            <span class="tag">Asset Management</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" style="--card-accent: var(--yellow);">
-          <div class="skill-card-head">
-            <svg class="skill-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            <h3>Game Development</h3>
-            <span class="skill-count">5</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Unity UI Development</span>
-            <span class="tag">Menus</span>
-            <span class="tag">HUD</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-card-head">
-            <svg class="skill-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <h3>Professional Skills</h3>
-            <span class="skill-count">7</span>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Technical Communication</span>
-            <span class="tag">Non-Technical Audiences</span>
-            <span class="tag">Fast Learner</span>
-            <span class="tag">Knowledge Gap Analysis</span>
-            <span class="tag">Malware Safe Handling</span>
-            <span class="tag">Verbal &amp; Written English</span>
-            <span class="tag">Self-Directed Research</span>
-          </div>
-        </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- ── EXPERIENCE ─────────────────────────────────────────── -->
-  <section id="experience" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Experience</h2>
-      </div>
+  <!-- ══ SKILLS ══════════════════════════════════════════════ -->
+  <section class="section section--alt" id="skills" aria-labelledby="skills-h">
+    <div class="shell">
 
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">Junior IT Staff</h3>
-                <p class="timeline-company">
-                  <span class="company-name">Cari-Med Limited</span>
-                  <span class="company-location">· Kingston, Jamaica</span>
-                </p>
-              </div>
-              <span class="timeline-date">December 2024 – June 2026</span>
-            </div>
-            <ul class="timeline-bullets" role="list">
-              <li>Delivered first-line technical support across hardware, software, and network systems for enterprise staff.</li>
-              <li>Managed network operations including user access provisioning, connectivity troubleshooting, and equipment lifecycle documentation.</li>
-              <li>Assisted with data backups, basic security checks, and system maintenance in a live enterprise environment.</li>
-              <li>Collaborated with senior IT staff on system upgrades, patches, and routine maintenance initiatives.</li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="tag">Help Desk</span>
-              <span class="tag">Network Ops</span>
-              <span class="tag">IT Documentation</span>
-              <span class="tag">Data Backup</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot timeline-dot-competition"></div>
-          <div class="timeline-content timeline-content-competition">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">
-                  Blue Team Competitor
-                  <span class="role-badge-inline">CTF</span>
-                </h3>
-                <p class="timeline-company">
-                  <span class="company-name">NCAE Cyber Games</span>
-                  <span class="company-location">· National Collegiate Cyber Defense Competition</span>
-                </p>
-              </div>
-              <span class="timeline-date">August 2025 – May 2026</span>
-            </div>
-            <p class="timeline-intro">
-              Competed as a blue team member in the NCAE Cyber Games, a nationally recognized collegiate cybersecurity competition focused on defending live infrastructure against real attack scenarios.
-            </p>
-            <ul class="timeline-bullets" role="list">
-              <li>Successfully captured flags by analyzing logs, decoding encoded payloads, and tracing attacker activity across compromised systems.</li>
-              <li>Performed log analysis and threat hunting using <strong>Splunk</strong> to surface indicators of compromise across event streams.</li>
-              <li>Applied reverse engineering techniques to analyze binaries and obfuscated files, recovering hidden data and understanding malware behavior.</li>
-              <li>Used <strong>CyberChef</strong> to decode and transform encoded artifacts — Base64, XOR, hex, and multi-stage cipher chains.</li>
-              <li>Cracked password hashes using <strong>John the Ripper</strong> to recover credentials during forensic investigation challenges.</li>
-              <li>Used <strong>dCode</strong> to solve classical cipher and encoding challenges under timed competition conditions.</li>
-              <li>Operated entirely within virtualized Linux environments, managing and pivoting across multiple VMs during live defense scenarios.</li>
-            </ul>
-            <div class="timeline-tags">
-              <span class="tag">Splunk</span>
-              <span class="tag">Reverse Engineering</span>
-              <span class="tag">CyberChef</span>
-              <span class="tag">John the Ripper</span>
-              <span class="tag">Linux</span>
-              <span class="tag">Virtual Machines</span>
-              <span class="tag">CTF / Flag Capture</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PROJECTS ───────────────────────────────────────────── -->
-  <section id="projects" class="section section-alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Projects</h2>
-      </div>
-
-      <div class="projects-stack">
-
-        <article class="case-study case-study-featured reveal" aria-labelledby="proj-stintmind">
-          <header class="case-head">
-            <span class="case-index" aria-hidden="true">01</span>
-            <div class="case-head-text">
-              <h3 class="case-title" id="proj-stintmind">StintMind</h3>
-              <p class="case-subtitle">AI-Driven Motorsport Race Strategy &amp; Security Platform</p>
-            </div>
-            <span class="case-status">Active</span>
-          </header>
-
-          <div class="case-body">
-            <div class="case-narrative">
-              <p class="case-desc">
-                A Python desktop application delivering real-time race strategy for sim-racing teams. It ingests 60&nbsp;Hz telemetry through shared-memory interfaces and applies machine learning to predict tire degradation, fuel consumption, and lap-time evolution — with CIA-triad security enforced across the entire data pipeline.
-              </p>
-              <ul class="case-highlights" role="list">
-                <li>60&nbsp;Hz shared-memory telemetry pipeline for iRacing and Le Mans Ultimate</li>
-                <li>ML models predicting tire wear, fuel burn, and lap-time evolution in real time</li>
-                <li>AES-256-GCM encryption with HMAC-SHA256 frame integrity on all data streams</li>
-                <li>PyQt6 interface surfacing live strategic recommendations to the pit wall</li>
-              </ul>
-              <div class="case-stack">
-                <span class="case-meta-key">Stack</span>
-                <div class="case-stack-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">PyQt6</span>
-                  <span class="tag">Machine Learning</span>
-                  <span class="tag">AES-256-GCM</span>
-                  <span class="tag">HMAC-SHA256</span>
-                  <span class="tag">Telemetry</span>
-                </div>
-              </div>
-            </div>
-
-            <aside class="case-meta">
-              <div class="case-meta-row">
-                <span class="case-meta-key">Context</span>
-                <span class="case-meta-val">Personal project</span>
-              </div>
-              <div class="case-meta-row">
-                <span class="case-meta-key">Timeline</span>
-                <span class="case-meta-val">May 2026 – Present</span>
-              </div>
-              <div class="case-meta-row">
-                <span class="case-meta-key">Domain</span>
-                <span class="case-meta-val">Telemetry · ML · Applied cryptography</span>
-              </div>
-              <a href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer" class="case-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                View on GitHub
-              </a>
-            </aside>
-          </div>
-        </article>
-
-        <article class="case-study reveal" aria-labelledby="proj-ejay">
-          <header class="case-head">
-            <span class="case-index" aria-hidden="true">02</span>
-            <div class="case-head-text">
-              <h3 class="case-title" id="proj-ejay">Project Ejay</h3>
-              <p class="case-subtitle">Early-Stage Ransomware Detection System</p>
-            </div>
-            <span class="case-status">In development</span>
-          </header>
-
-          <div class="case-body">
-            <div class="case-narrative">
-              <p class="case-desc">
-                A prototype system designed to detect ransomware activity before file encryption begins. It combines behavioral analysis of system, file, and process events with machine learning classification to separate normal activity from likely-malicious activity at the earliest observable stage.
-              </p>
-              <ul class="case-highlights" role="list">
-                <li>Monitors system, file, and process behavior in real time</li>
-                <li>Python classification model trained to surface anomalous patterns</li>
-                <li>Pre-encryption detection window, targeting intervention before data loss</li>
-              </ul>
-              <div class="case-stack">
-                <span class="case-meta-key">Stack</span>
-                <div class="case-stack-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Machine Learning</span>
-                  <span class="tag">Threat Detection</span>
-                  <span class="tag">Behavioral Analysis</span>
-                </div>
-              </div>
-            </div>
-
-            <aside class="case-meta">
-              <div class="case-meta-row">
-                <span class="case-meta-key">Context</span>
-                <span class="case-meta-val">Nova Southeastern University</span>
-              </div>
-              <div class="case-meta-row">
-                <span class="case-meta-key">Timeline</span>
-                <span class="case-meta-val">Dec 2025 – Present</span>
-              </div>
-              <div class="case-meta-row">
-                <span class="case-meta-key">Domain</span>
-                <span class="case-meta-val">Threat detection · Behavioral analysis</span>
-              </div>
-              <a href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer" class="case-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                View on GitHub
-              </a>
-            </aside>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EDUCATION ──────────────────────────────────────────── -->
-  <section id="education" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Education</h2>
-      </div>
-
-      <div class="edu-card reveal">
-        <div class="edu-logo" aria-hidden="true">NSU</div>
-        <div class="edu-content">
-          <h3 class="edu-school">Nova Southeastern University</h3>
-          <p class="edu-location">Davie, FL</p>
-          <p class="edu-degree">Bachelor of Science in <strong>Cybersecurity Management</strong></p>
-          <p class="edu-minor">Minor in <strong>Data Analytics</strong></p>
-          <p class="edu-grad">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            August 2022 – May 2026
-          </p>
-          <div class="edu-tags">
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">Data Analytics</span>
-            <span class="tag">Network Security</span>
-            <span class="tag">Threat Analysis</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ────────────────────────────────────────────── -->
-  <section id="contact" class="section section-alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-desc">
-          Actively pursuing opportunities in cybersecurity, software development, data analytics, and IT.
+      <div class="section-head reveal">
+        <h2 class="h-section" id="skills-h">Capabilities</h2>
+        <p class="prose">
+          Grouped by the kind of work rather than by the tool. Everything listed here comes
+          from coursework, competition, or something I have actually shipped.
         </p>
       </div>
 
-      <div class="contact-grid reveal">
-        <a href="mailto:josegmatoswork@gmail.com" class="contact-card">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </div>
-          <span class="contact-label">Email</span>
-          <span class="contact-value">josegmatoswork@gmail.com</span>
-        </a>
+      <div class="caps">
 
-        <a href="tel:+18136784900" class="contact-card">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 12a19.79 19.79 0 0 1-3-8.56A2 2 0 0 1 3 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
-          </div>
-          <span class="contact-label">Phone</span>
-          <span class="contact-value">813-678-4900</span>
-        </a>
+        <article class="cap cap--lead reveal" style="--cap-accent: var(--accent)">
+          <div class="cap__tick" aria-hidden="true"></div>
+          <h3 class="cap__title">Cybersecurity &amp; Networking</h3>
+          <p class="cap__note">
+            Blue team defense, log analysis, and threat hunting, applied in live competition
+            and in a production enterprise environment.
+          </p>
+          <ul class="tag-set">
+            <li class="tag tag--signal">Wireshark</li>
+            <li class="tag tag--signal">Splunk</li>
+            <li class="tag tag--signal">Network Monitoring</li>
+            <li class="tag tag--signal">Threat Detection</li>
+            <li class="tag tag--signal">Blue Team</li>
+            <li class="tag tag--signal">Reverse Engineering</li>
+            <li class="tag tag--signal">Malware Handling</li>
+            <li class="tag tag--signal">CyberChef</li>
+            <li class="tag tag--signal">John the Ripper</li>
+            <li class="tag tag--signal">Virtual Machines</li>
+          </ul>
+        </article>
 
-        <a href="https://www.linkedin.com/in/jose-matos-036694281/" class="contact-card" target="_blank" rel="noopener noreferrer">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </div>
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">Jose Matos</span>
-        </a>
+        <article class="cap cap--tint reveal" style="--cap-accent: var(--accent); --reveal-delay: 60ms">
+          <div class="cap__tick" aria-hidden="true"></div>
+          <h3 class="cap__title">Programming &amp; Data</h3>
+          <ul class="tag-set">
+            <li class="tag">Python</li>
+            <li class="tag">C#</li>
+            <li class="tag">.NET</li>
+            <li class="tag">Java</li>
+            <li class="tag">PyQt6</li>
+            <li class="tag">SQL</li>
+            <li class="tag">Tableau</li>
+            <li class="tag">Data Analysis</li>
+            <li class="tag">HTML</li>
+            <li class="tag">CSS</li>
+          </ul>
+        </article>
 
-        <a href="https://github.com/Josizino" class="contact-card" target="_blank" rel="noopener noreferrer">
-          <div class="contact-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          </div>
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">github.com/Josizino</span>
-        </a>
-      </div>
+        <article class="cap reveal" style="--reveal-delay: 120ms">
+          <div class="cap__tick" aria-hidden="true"></div>
+          <h3 class="cap__title">Systems &amp; Platforms</h3>
+          <ul class="tag-set">
+            <li class="tag">Linux</li>
+            <li class="tag">Windows Admin</li>
+            <li class="tag">macOS</li>
+            <li class="tag">Processes &amp; Threads</li>
+            <li class="tag">Virtual Memory</li>
+            <li class="tag">OS Internals</li>
+          </ul>
+        </article>
 
-      <div class="contact-cta reveal">
-        <a href="mailto:josegmatoswork@gmail.com" class="btn btn-primary btn-large">
-          Send an Email
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <article class="cap cap--tint reveal" style="--cap-accent: var(--signal)">
+          <div class="cap__tick" aria-hidden="true"></div>
+          <h3 class="cap__title">Game Security &amp; Anti-Cheat</h3>
+          <ul class="tag-set">
+            <li class="tag">External Cheats</li>
+            <li class="tag">Internal Cheats</li>
+            <li class="tag">Wall Hacks</li>
+            <li class="tag">Aimbots</li>
+            <li class="tag">Modding</li>
+            <li class="tag">Cheat Detection</li>
+            <li class="tag">PC Cheat Ecosystems</li>
+          </ul>
+        </article>
+
+        <article class="cap reveal" style="--reveal-delay: 60ms">
+          <div class="cap__tick" aria-hidden="true"></div>
+          <h3 class="cap__title">IT &amp; Support</h3>
+          <ul class="tag-set">
+            <li class="tag">Help Desk</li>
+            <li class="tag">Troubleshooting</li>
+            <li class="tag">IT Documentation</li>
+            <li class="tag">Asset Management</li>
+          </ul>
+        </article>
+
+        <article class="cap cap--wide reveal" style="--cap-accent: var(--signal)">
+          <div class="cap__tick" aria-hidden="true"></div>
+          <h3 class="cap__title">Game Development</h3>
+          <ul class="tag-set">
+            <li class="tag">Unity</li>
+            <li class="tag">C#</li>
+            <li class="tag">Unity UI Development</li>
+            <li class="tag">Menus</li>
+            <li class="tag">HUD</li>
+          </ul>
+        </article>
+
+        <article class="cap cap--wide reveal" style="--reveal-delay: 60ms">
+          <div class="cap__tick" aria-hidden="true"></div>
+          <h3 class="cap__title">Professional</h3>
+          <ul class="tag-set">
+            <li class="tag">Technical Communication</li>
+            <li class="tag">Non-Technical Audiences</li>
+            <li class="tag">Fast Learner</li>
+            <li class="tag">Knowledge Gap Analysis</li>
+            <li class="tag">Malware Safe Handling</li>
+            <li class="tag">Verbal &amp; Written English</li>
+            <li class="tag">Self-Directed Research</li>
+          </ul>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>
-        <span class="footer-logo">[JM]</span>
-        &nbsp;·&nbsp; Jose Matos &nbsp;·&nbsp; Davie, FL
-      </p>
-      <p class="footer-copy">
-        Built with HTML, CSS &amp; JS &nbsp;·&nbsp; © <span id="year"></span>
-      </p>
-    </div>
-  </footer>
+  <!-- ══ EXPERIENCE ══════════════════════════════════════════ -->
+  <section class="section" id="experience" aria-labelledby="exp-h">
+    <div class="shell">
 
-  <script src="js/main.js?v=3"></script>
+      <div class="section-head reveal">
+        <h2 class="h-section" id="exp-h">Experience</h2>
+      </div>
+
+      <div class="track">
+
+        <article class="stint reveal">
+          <div class="stint__head">
+            <h3 class="stint__role">Junior IT Staff</h3>
+            <span class="stint__when">December 2024 - June 2026</span>
+          </div>
+          <p class="stint__org">Cari-Med Limited <span>· Kingston, Jamaica</span></p>
+          <ul class="stint__list">
+            <li>Delivered first-line technical support across hardware, software, and network systems for enterprise staff.</li>
+            <li>Managed network operations including user access provisioning, connectivity troubleshooting, and equipment lifecycle documentation.</li>
+            <li>Assisted with data backups, basic security checks, and system maintenance in a live enterprise environment.</li>
+            <li>Collaborated with senior IT staff on system upgrades, patches, and routine maintenance initiatives.</li>
+          </ul>
+          <ul class="tag-set stint__tags">
+            <li class="tag">Help Desk</li>
+            <li class="tag">Network Ops</li>
+            <li class="tag">IT Documentation</li>
+            <li class="tag">Data Backup</li>
+          </ul>
+        </article>
+
+        <article class="stint reveal" style="--node: var(--signal)">
+          <div class="stint__head">
+            <h3 class="stint__role">
+              Blue Team Competitor
+              <span class="stint__badge">CTF</span>
+            </h3>
+            <span class="stint__when">August 2025 - May 2026</span>
+          </div>
+          <p class="stint__org">NCAE Cyber Games <span>· National Collegiate Cyber Defense Competition</span></p>
+          <p class="stint__intro">
+            Competed as a blue team member in the NCAE Cyber Games, a nationally recognized
+            collegiate cybersecurity competition focused on defending live infrastructure
+            against real attack scenarios.
+          </p>
+          <ul class="stint__list">
+            <li>Captured flags by analyzing logs, decoding encoded payloads, and tracing attacker activity across compromised systems.</li>
+            <li>Performed log analysis and threat hunting using <strong>Splunk</strong> to surface indicators of compromise across event streams.</li>
+            <li>Applied reverse engineering techniques to analyze binaries and obfuscated files, recovering hidden data and understanding malware behavior.</li>
+            <li>Used <strong>CyberChef</strong> to decode and transform encoded artifacts: Base64, XOR, hex, and multi-stage cipher chains.</li>
+            <li>Cracked password hashes using <strong>John the Ripper</strong> to recover credentials during forensic investigation challenges.</li>
+            <li>Used <strong>dCode</strong> to solve classical cipher and encoding challenges under timed competition conditions.</li>
+            <li>Operated entirely within virtualized Linux environments, managing and pivoting across multiple VMs during live defense scenarios.</li>
+          </ul>
+          <ul class="tag-set stint__tags">
+            <li class="tag">Splunk</li>
+            <li class="tag">Reverse Engineering</li>
+            <li class="tag">CyberChef</li>
+            <li class="tag">John the Ripper</li>
+            <li class="tag">Linux</li>
+            <li class="tag">Virtual Machines</li>
+            <li class="tag">CTF / Flag Capture</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ════════════════════════════════════════════ -->
+  <section class="section section--alt" id="projects" aria-labelledby="proj-h">
+    <div class="shell">
+
+      <div class="section-head reveal">
+        <h2 class="h-section" id="proj-h">Projects</h2>
+      </div>
+
+      <article class="case case--lead reveal" aria-labelledby="case-stintmind">
+        <header class="case__head">
+          <h3 class="case__title" id="case-stintmind">StintMind</h3>
+          <span class="case__state">Active</span>
+          <p class="case__tagline">AI-driven motorsport race strategy and security platform</p>
+        </header>
+
+        <div class="case__body">
+          <div>
+            <p class="prose">
+              A Python desktop application delivering real-time race strategy for sim-racing
+              teams. It ingests 60&nbsp;Hz telemetry through shared-memory interfaces and applies
+              machine learning to predict tire degradation, fuel consumption, and lap-time
+              evolution. CIA-triad security is enforced across the entire data pipeline.
+            </p>
+            <ul class="case__list">
+              <li>60&nbsp;Hz shared-memory telemetry pipeline for iRacing and Le Mans Ultimate</li>
+              <li>Machine learning models predicting tire wear, fuel burn, and lap-time evolution in real time</li>
+              <li>AES-256-GCM encryption with HMAC-SHA256 frame integrity on all data streams</li>
+              <li>PyQt6 interface surfacing live strategic recommendations to the pit wall</li>
+            </ul>
+
+            <div class="case__stack">
+              <span class="key">Stack</span>
+              <ul class="tag-set">
+                <li class="tag tag--signal">Python</li>
+                <li class="tag tag--signal">PyQt6</li>
+                <li class="tag tag--signal">Machine Learning</li>
+                <li class="tag tag--signal">AES-256-GCM</li>
+                <li class="tag tag--signal">HMAC-SHA256</li>
+                <li class="tag tag--signal">Telemetry</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="case__meta">
+            <div class="readout__row">
+              <span class="key">Context</span>
+              <span class="readout__val">Personal project</span>
+            </div>
+            <div class="readout__row">
+              <span class="key">Timeline</span>
+              <span class="readout__val">May 2026 to present</span>
+            </div>
+            <div class="readout__row">
+              <span class="key">Domain</span>
+              <span class="readout__val">Telemetry, machine learning, applied cryptography</span>
+            </div>
+            <div class="readout__row">
+              <span class="key">Role</span>
+              <span class="readout__val">Sole designer and developer</span>
+            </div>
+            <a class="case__link" href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              View on GitHub
+            </a>
+          </aside>
+        </div>
+      </article>
+
+      <article class="case reveal" aria-labelledby="case-ejay">
+        <header class="case__head">
+          <h3 class="case__title" id="case-ejay">Project Ejay</h3>
+          <span class="case__state">In development</span>
+          <p class="case__tagline">Early-stage ransomware detection system</p>
+        </header>
+
+        <div class="case__body">
+          <div>
+            <p class="prose">
+              A prototype designed to detect ransomware activity before file encryption begins.
+              It combines behavioral analysis of system, file, and process events with machine
+              learning classification to separate normal activity from likely-malicious activity
+              at the earliest observable stage.
+            </p>
+            <ul class="case__list">
+              <li>Monitors system, file, and process behavior in real time</li>
+              <li>Python classification model trained to surface anomalous patterns</li>
+              <li>Pre-encryption detection window, targeting intervention before data loss</li>
+            </ul>
+
+            <div class="case__stack">
+              <span class="key">Stack</span>
+              <ul class="tag-set">
+                <li class="tag">Python</li>
+                <li class="tag">Machine Learning</li>
+                <li class="tag">Threat Detection</li>
+                <li class="tag">Behavioral Analysis</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="case__meta">
+            <div class="readout__row">
+              <span class="key">Context</span>
+              <span class="readout__val">Nova Southeastern University</span>
+            </div>
+            <div class="readout__row">
+              <span class="key">Timeline</span>
+              <span class="readout__val">December 2025 to present</span>
+            </div>
+            <div class="readout__row">
+              <span class="key">Domain</span>
+              <span class="readout__val">Threat detection, behavioral analysis</span>
+            </div>
+            <a class="case__link" href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              View on GitHub
+            </a>
+          </aside>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ SECURITY FOCUS ══════════════════════════════════════ -->
+  <section class="section" id="focus" aria-labelledby="focus-h">
+    <div class="shell">
+
+      <div class="section-head reveal">
+        <h2 class="h-section" id="focus-h">Security Focus</h2>
+        <p class="prose">
+          The areas I keep returning to, and where each one comes from.
+        </p>
+      </div>
+
+      <div class="focus">
+
+        <div class="focus__item reveal">
+          <h3 class="focus__title">Threat Detection &amp; Hunting</h3>
+          <p class="focus__desc">
+            Working through event streams to find the activity that does not belong, then
+            following it back to its source.
+          </p>
+          <span class="focus__from">From <b>NCAE Cyber Games</b> and <b>Project Ejay</b></span>
+        </div>
+
+        <div class="focus__item reveal" style="--reveal-delay: 60ms">
+          <h3 class="focus__title">Live Blue Team Defense</h3>
+          <p class="focus__desc">
+            Defending running infrastructure against an active red team under time pressure,
+            where the system has to stay up while you work.
+          </p>
+          <span class="focus__from">From <b>NCAE Cyber Games</b></span>
+        </div>
+
+        <div class="focus__item reveal">
+          <h3 class="focus__title">Reverse Engineering &amp; Malware Analysis</h3>
+          <p class="focus__desc">
+            Taking apart binaries and obfuscated files to recover hidden data and understand
+            what a sample is really doing.
+          </p>
+          <span class="focus__from">From <b>NCAE Cyber Games</b> and coursework</span>
+        </div>
+
+        <div class="focus__item reveal" style="--reveal-delay: 60ms">
+          <h3 class="focus__title">Applied Cryptography</h3>
+          <p class="focus__desc">
+            Building confidentiality and integrity into a real data pipeline rather than
+            bolting it on afterwards.
+          </p>
+          <span class="focus__from">From <b>StintMind</b>, AES-256-GCM and HMAC-SHA256</span>
+        </div>
+
+        <div class="focus__item reveal">
+          <h3 class="focus__title">Behavioral &amp; ML-Based Detection</h3>
+          <p class="focus__desc">
+            Using machine learning on system, file, and process behavior to separate normal
+            activity from the early stages of an attack.
+          </p>
+          <span class="focus__from">From <b>Project Ejay</b></span>
+        </div>
+
+        <div class="focus__item reveal" style="--reveal-delay: 60ms">
+          <h3 class="focus__title">Network Analysis &amp; Monitoring</h3>
+          <p class="focus__desc">
+            Reading traffic and network state to understand how systems talk to each other,
+            and noticing when that changes.
+          </p>
+          <span class="focus__from">From <b>Cari-Med</b> network operations and coursework</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EDUCATION ═══════════════════════════════════════════ -->
+  <section class="section section--alt" id="education" aria-labelledby="edu-h">
+    <div class="shell">
+
+      <div class="section-head reveal">
+        <h2 class="h-section" id="edu-h">Education</h2>
+      </div>
+
+      <div class="edu reveal">
+        <div class="edu__mark" aria-hidden="true">NSU</div>
+
+        <div>
+          <h3 class="edu__school">Nova Southeastern University</h3>
+          <p class="edu__degree">
+            Bachelor of Science in <strong>Cybersecurity Management</strong>,
+            minor in <strong>Data Analytics</strong>
+          </p>
+          <ul class="tag-set edu__tags">
+            <li class="tag">Cybersecurity</li>
+            <li class="tag">Data Analytics</li>
+            <li class="tag">Network Security</li>
+            <li class="tag">Threat Analysis</li>
+          </ul>
+        </div>
+
+        <div class="edu__when">
+          <span class="key">Davie, Florida</span>
+          <b>August 2022 - May 2026</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ═════════════════════════════════════════════ -->
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="shell contact">
+
+      <div class="reveal">
+        <h2 class="h-section" id="contact-h">Contact</h2>
+        <p class="lede" style="margin-top: var(--space-6)">
+          Actively pursuing full-time roles in cybersecurity, software development, data
+          analytics, and IT.
+        </p>
+        <p class="prose" style="margin-top: var(--space-4)">
+          The fastest way to reach me is email. I read everything and reply to anything
+          concrete.
+        </p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:josegmatoswork@gmail.com">
+            Email me
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal" style="--reveal-delay: 90ms">
+        <a class="channel" href="mailto:josegmatoswork@gmail.com">
+          <span class="channel__icon" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <span>
+            <span class="key">Email</span>
+            <span class="channel__val">josegmatoswork@gmail.com</span>
+          </span>
+          <svg class="channel__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+
+        <a class="channel" href="tel:+18136784900">
+          <span class="channel__icon" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.09 12a19.79 19.79 0 0 1-3-8.56A2 2 0 0 1 3 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+          </span>
+          <span>
+            <span class="key">Phone</span>
+            <span class="channel__val">813-678-4900</span>
+          </span>
+          <svg class="channel__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+
+        <a class="channel" href="https://www.linkedin.com/in/jose-matos-036694281/" target="_blank" rel="noopener noreferrer">
+          <span class="channel__icon" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </span>
+          <span>
+            <span class="key">LinkedIn</span>
+            <span class="channel__val">Jose Matos</span>
+          </span>
+          <svg class="channel__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+
+        <a class="channel" href="https://github.com/Josizino" target="_blank" rel="noopener noreferrer">
+          <span class="channel__icon" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </span>
+          <span>
+            <span class="key">GitHub</span>
+            <span class="channel__val">github.com/Josizino</span>
+          </span>
+          <svg class="channel__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+
+        <a class="channel" href="Jose_Matos_Resume.pdf" target="_blank" rel="noopener">
+          <span class="channel__icon" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <span>
+            <span class="key">Resume</span>
+            <span class="channel__val">Jose_Matos_Resume.pdf</span>
+          </span>
+          <svg class="channel__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer class="foot">
+  <div class="shell foot__inner">
+    <p class="foot__mark">Jose Matos &nbsp;/&nbsp; Davie, Florida</p>
+    <p>Built with HTML, CSS, and JavaScript &nbsp;/&nbsp; <span id="year"></span></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>

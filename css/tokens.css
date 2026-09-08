@@ -1,0 +1,118 @@
+/* ============================================================
+   DESIGN TOKENS
+   Single source of truth for colour, type, space, and shape.
+   Nothing below this file should hardcode a colour or a radius.
+   ============================================================ */
+
+:root {
+
+  /* ---- Ground -------------------------------------------------
+     Navy, from deepest to most lifted. Surfaces step up as they
+     come forward; nothing on the page uses pure black.          */
+  --ground-000: #040B18;   /* page edge, deepest */
+  --ground-100: #060F20;   /* page */
+  --ground-200: #0A1729;   /* alternating section */
+  --ground-300: #0E1F37;   /* surface */
+  --ground-400: #142945;   /* surface, lifted */
+  --ground-500: #1B3355;   /* surface, hover */
+
+  /* ---- Accent -------------------------------------------------
+     Red Bull red. 3.8:1 on navy, which clears WCAG AA for large
+     text (3:1) but NOT for body-size text (4.5:1). So it is a
+     structural colour: fills, rules, borders, display type.
+     Never set it on anything under 24px unless it is 700+ weight
+     and at least 18.66px.                                       */
+  --accent:      #DB0A40;
+  --accent-lift: #F0114A;  /* hover */
+  --accent-08:   rgba(219, 10, 64, 0.08);
+  --accent-14:   rgba(219, 10, 64, 0.14);
+  --accent-30:   rgba(219, 10, 64, 0.30);
+  --accent-50:   rgba(219, 10, 64, 0.50);
+
+  /* ---- Signal -------------------------------------------------
+     Sun-disc yellow. 12.6:1 on navy. This is what carries every
+     small piece of accent text: labels, metadata, tags, inline
+     emphasis. Where the accent would fail contrast, use this.   */
+  --signal:      #FFC906;
+  --signal-10:   rgba(255, 201, 6, 0.10);
+  --signal-30:   rgba(255, 201, 6, 0.30);
+
+  /* ---- Text ---------------------------------------------------
+     All four pass AA against ground-100 through ground-400.     */
+  --text-100: #F2F5FA;   /* headings */
+  --text-200: #C9D4E4;   /* body */
+  --text-300: #94A6C0;   /* secondary */
+  --text-400: #7A8DA9;   /* metadata, faintest legible */
+
+  /* ---- Lines --------------------------------------------------
+     The instrument grid. Hairlines do the structural work that
+     card borders would otherwise do.                            */
+  --line-soft:   rgba(148, 166, 192, 0.14);
+  --line:        rgba(148, 166, 192, 0.22);
+  --line-strong: rgba(148, 166, 192, 0.34);
+  --line-accent: var(--accent-30);
+
+  /* ---- Type ---------------------------------------------------
+     Archivo is a variable font with a width axis (75-125). The
+     display face is the same family stretched wide, which gives
+     the headings an industrial, plotted-on-a-panel feel without
+     loading a second family.                                    */
+  --font-display: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-body:    'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --width-display: 112%;   /* font-stretch for headings */
+  --width-wide:    118%;   /* font-stretch for the hero name */
+
+  /* Type scale. Fluid between the mobile and desktop bounds. */
+  --step--1: clamp(0.78rem, 0.76rem + 0.10vw, 0.83rem);
+  --step-0:  clamp(0.94rem, 0.90rem + 0.18vw, 1.02rem);
+  --step-1:  clamp(1.12rem, 1.05rem + 0.32vw, 1.32rem);
+  --step-2:  clamp(1.38rem, 1.24rem + 0.64vw, 1.85rem);
+  --step-3:  clamp(1.75rem, 1.48rem + 1.25vw, 2.70rem);
+  --step-4:  clamp(2.30rem, 1.70rem + 2.90vw, 4.60rem);
+
+  /* ---- Space --------------------------------------------------
+     A 4px base. Section rhythm sits at --space-9/--space-10.    */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.75rem;
+  --space-8: 3.5rem;
+  --space-9: 5rem;
+  --space-10: 7rem;
+
+  /* ---- Shape --------------------------------------------------
+     One radius scale, applied consistently. Instruments are not
+     rounded, so the whole scale is tight and nothing is a pill. */
+  --r-sm: 3px;   /* tags, badges */
+  --r-md: 5px;   /* buttons, inputs */
+  --r-lg: 8px;   /* surfaces */
+
+  /* ---- Motion -------------------------------------------------
+     Two curves. `--ease` for interface feedback, `--ease-out`
+     for entrances. Durations stay short: this should read as
+     responsive instrumentation, not as a slideshow.             */
+  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:  120ms;
+  --dur:       220ms;
+  --dur-slow:  520ms;
+
+  /* ---- Layout -------------------------------------------------  */
+  --measure:   68ch;    /* max line length for body copy */
+  --shell:     1180px;  /* content container */
+  --gutter:    clamp(1.15rem, 4vw, 2.5rem);
+  --nav-h:     64px;
+
+  /* ---- Layers -------------------------------------------------
+     Documented scale. Nothing in this project should use a
+     z-index that is not one of these.                           */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-nav:     100;
+  --z-overlay: 200;
+}

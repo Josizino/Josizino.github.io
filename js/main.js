@@ -1,77 +1,147 @@
-/* ── Navbar scroll effect ─────────────────────────────────── */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 30);
-}, { passive: true });
+/* ============================================================
+   main.js
 
-/* ── Mobile nav toggle ────────────────────────────────────── */
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.querySelector('.nav-links');
+   Four small behaviours, each self-contained. Everything that
+   reacts to scroll position uses IntersectionObserver rather
+   than a scroll listener, so nothing runs per frame.
 
-navToggle.addEventListener('click', () => {
-  const open = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', open);
-});
+   Smooth scrolling and reduced-motion are handled in CSS
+   (scroll-behavior + the prefers-reduced-motion block), not here.
+   ============================================================ */
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
-});
+(function () {
+  'use strict';
 
-/* ── Reveal on scroll ─────────────────────────────────────── */
-const revealEls = document.querySelectorAll('.reveal');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const siblings = [...entry.target.parentElement.querySelectorAll('.reveal:not(.visible)')];
-      const delay    = siblings.indexOf(entry.target) * 60;
-      setTimeout(() => entry.target.classList.add('visible'), delay);
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
+  /* ---- Sticky nav ------------------------------------------
+     A zero-height sentinel sits at the top of the document. The
+     nav gets its solid background exactly when that sentinel
+     leaves the viewport.                                       */
+  function stickyNav() {
+    var nav = document.getElementById('nav');
+    var sentinel = document.getElementById('top');
+    if (!nav || !sentinel) return;
 
-revealEls.forEach(el => revealObserver.observe(el));
+    new IntersectionObserver(function (entries) {
+      nav.classList.toggle('is-stuck', !entries[0].isIntersecting);
+    }).observe(sentinel);
+  }
 
-/* ── Active nav link on scroll ────────────────────────────── */
-const sections   = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+  /* ---- Scroll reveals --------------------------------------
+     Progressive enhancement: the markup is visible until this
+     runs. We only take the hidden start state once we know an
+     observer exists to undo it, so a script error or an
+     unsupported browser cannot leave the page blank.
 
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navAnchors.forEach(a => {
-        a.classList.remove('nav-active');
-        if (a.getAttribute('href') === `#${entry.target.id}`) {
-          a.classList.add('nav-active');
-        }
+     A watchdog covers the remaining case where the observer is
+     created but never delivers (some embedded and background
+     rendering contexts do not service IntersectionObserver).   */
+  function reveals() {
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+    document.documentElement.classList.add('js-reveal');
+
+    var pending = items.length;
+    var delivered = false;
+
+    var io = new IntersectionObserver(function (entries) {
+      delivered = true;
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+        pending--;
       });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    items.forEach(function (el) { io.observe(el); });
+
+    function showAll() {
+      io.disconnect();
+      items.forEach(function (el) { el.classList.add('is-in'); });
     }
-  });
-}, { threshold: 0.4 });
 
-sections.forEach(s => sectionObserver.observe(s));
+    // If nothing has been delivered shortly after load, assume the
+    // observer will not fire and show the content.
+    window.setTimeout(function () {
+      if (!delivered && pending > 0) showAll();
+    }, 1200);
+  }
 
-/* ── Smooth scroll ────────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({ top, behavior: 'smooth' });
+  /* ---- Active section in the nav ---------------------------
+     The margins collapse the viewport to a band across its
+     middle, so exactly one section is "current" at a time.     */
+  function activeLink() {
+    var sections = document.querySelectorAll('main section[id]');
+    var links = document.querySelectorAll('.nav__link[href^="#"]');
+    if (!sections.length || !links.length) return;
+
+    var byId = {};
+    links.forEach(function (link) {
+      byId[link.getAttribute('href').slice(1)] = link;
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var current = byId[entry.target.id];
+        if (!current) return;
+        links.forEach(function (l) { l.classList.remove('is-active'); });
+        current.classList.add('is-active');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  /* ---- Mobile menu -----------------------------------------
+     Opens the nav sheet, keeps aria-expanded truthful, and
+     closes on link click, Escape, or a click outside.          */
+  function mobileMenu() {
+    var toggle = document.getElementById('navToggle');
+    var list = document.getElementById('navList');
+    var nav = document.getElementById('nav');
+    if (!toggle || !list || !nav) return;
+
+    function setOpen(open) {
+      list.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
     }
-  });
-});
 
-/* ── Footer year ──────────────────────────────────────────── */
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+    toggle.addEventListener('click', function () {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
 
-/* ── Reduced motion: disable all transitions ─────────────── */
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-}
+    list.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
+      setOpen(false);
+      toggle.focus();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
+      if (!nav.contains(e.target)) setOpen(false);
+    });
+  }
+
+  /* ---- Footer year ----------------------------------------- */
+  function year() {
+    var el = document.getElementById('year');
+    if (el) el.textContent = String(new Date().getFullYear());
+  }
+
+  stickyNav();
+  reveals();
+  activeLink();
+  mobileMenu();
+  year();
+})();
