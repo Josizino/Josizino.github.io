@@ -1,0 +1,98 @@
+/* ============================================================
+   CARS
+   Racing lines, track maps, and the silhouettes that drive them.
+   Every car is decoration: aria-hidden, pointer-events off, and
+   clipped inside its own layer so none can widen the page.
+
+   Each scene has three states:
+     no JS / no-motion   car parked on its line, visible
+     motion pending      car waits off-stage for Anime.js
+     reduced motion      car parked, never animated
+   ============================================================ */
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* SVG transforms here are in user units: the motion system writes
+   translate/rotate that come straight from the path geometry. */
+.lane__car, .lane__flip, .track__car, .projects__car, .distant__car {
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+
+/* ---- Lanes (hero + between sections) ------------------------ */
+.lane {
+  position: relative;
+  z-index: var(--z-track);
+  height: clamp(72px, 8vw, 112px);
+  overflow: hidden;
+  pointer-events: none;
+}
+.lane__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lane__line { fill: none; stroke: var(--line); stroke-width: 1.5; }
+.lane__kerb { fill: none; stroke: var(--line-soft); stroke-width: 1; stroke-dasharray: 18 14; }
+.lane__streak { fill: var(--line-strong); opacity: 0; }
+
+.lane--hero {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(96px, 11vw, 150px);
+}
+.lane--hero .lane__car { --car-body: #262B33; --car-line: rgba(176, 186, 200, 0.34); }
+
+/* Parked positions: where each car rests with no animation. */
+.lane--hero .lane__car          { transform: translate(1150px, 117px); }
+.lane--band .lane__car          { transform: translate(1080px, 84px); }
+.lane--band[data-direction="rtl"] .lane__car  { transform: translate(520px, 81px); }
+.lane--band[data-direction="rtl"] .lane__flip { transform: scaleX(-1); }
+
+/* ---- Hero track map ----------------------------------------- */
+.track { width: 100%; height: auto; overflow: visible; }
+.track__edge   { fill: none; stroke: var(--carbon-500); stroke-width: 9; stroke-linejoin: round; }
+.track__line   { fill: none; stroke: var(--line-strong); stroke-width: 1.2; stroke-linejoin: round; }
+.track__sector { fill: none; stroke: var(--red); stroke-width: 2.4; stroke-linecap: round; opacity: 0; }
+.track__start  { stroke: var(--text-100); stroke-width: 2; }
+.track__car    { --car-body: var(--text-100); --car-tyre: #3A414B; transform: translate(150px, 160px); }
+
+/* ---- Projects racing line ----------------------------------- */
+.projects__track { position: relative; }
+.projects__line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+.projects__path { fill: none; stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 2 7; stroke-linecap: round; }
+.projects__car  { --car-body: var(--red); --car-rear: var(--text-100); opacity: 0; }
+
+/* ---- Distant pack (fixed backdrop) -------------------------- */
+.distant {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+.distant__car { --car-body: #1E2329; --car-line: transparent; --car-head: rgba(233, 238, 246, 0.35); }
+
+@media (max-width: 900px) {
+  .distant { display: none; }
+}
+
+/* Motion pending: cars wait off-stage until Anime.js drives them.
+   Scoped to no-preference so reduced motion keeps them parked. */
+@media (prefers-reduced-motion: no-preference) {
+  .js:not(.no-motion) .lane__car { transform: translate(-400px, 100px); }
+  .js:not(.no-motion) .track__car { opacity: 0; }
+}
+
+/* Reduced motion: a static scene, fully drawn. */
+@media (prefers-reduced-motion: reduce) {
+  .track__sector { opacity: 0.9; }
+  .projects__car { display: none; }
+  .distant { display: none; }
+}

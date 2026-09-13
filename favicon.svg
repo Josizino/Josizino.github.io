@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="JM">
-  <rect width="32" height="32" rx="5" fill="#060F20"/>
-  <rect x="0" y="0" width="32" height="2.5" rx="1.25" fill="#DB0A40"/>
-  <text x="16" y="23" text-anchor="middle"
-        font-family="'IBM Plex Mono', ui-monospace, monospace"
-        font-size="14" font-weight="600" fill="#F2F5FA">JM</text>
+  <rect width="32" height="32" rx="5" fill="#0B0C0E" />
+  <path d="M4 9 H24 L28 13 V23 H4 Z" fill="#FF3B3F" />
+  <text x="16" y="20.6" text-anchor="middle"
+        font-family="'Saira', 'Arial Narrow', 'Helvetica Neue', sans-serif"
+        font-size="11" font-weight="800" font-style="italic" fill="#0B0C0E">JM</text>
 </svg>

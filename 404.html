@@ -5,58 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found | Jose Matos</title>
   <meta name="robots" content="noindex" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta name="theme-color" content="#060F20" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" content="#0B0C0E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wdth,wght@1,62.5..100,700..800&family=Archivo:wght@400..700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
 
   <style>
     .lost {
+      position: relative;
+      z-index: var(--z-content);
       min-height: 100dvh;
       display: grid;
-      place-content: center;
+      align-content: center;
       justify-items: start;
       gap: var(--space-5);
       padding-inline: var(--gutter);
-      position: relative;
-      overflow: hidden;
+      max-width: var(--shell);
+      margin-inline: auto;
     }
-    .lost::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--line-soft) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: radial-gradient(ellipse 70% 60% at 30% 50%, #000 10%, transparent 70%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 50%, #000 10%, transparent 70%);
-    }
-    .lost > * { position: relative; }
     .lost__code {
-      font-family: var(--font-mono);
-      font-size: clamp(3.5rem, 14vw, 7rem);
-      font-weight: 500;
-      line-height: 1;
-      color: var(--accent);
+      font: italic 800 clamp(5rem, 18vw, 10rem) / 0.85 var(--font-display);
+      font-stretch: var(--stretch-tight);
+      color: var(--red);
     }
-    .lost__h { font-size: var(--step-3); }
+    .lost__title {
+      font-size: var(--step-3);
+      font-stretch: var(--stretch-cond);
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
+  <div class="backdrop" aria-hidden="true"></div>
   <main class="lost">
-    <p class="lost__code">404</p>
-    <h1 class="lost__h">This page does not exist.</h1>
-    <p class="prose" style="max-width: 44ch">
-      The address may be mistyped, or the page may have moved. The portfolio itself is still here.
-    </p>
+    <p class="status status--caution">Off track</p>
+    <p class="lost__code" aria-hidden="true">404</p>
+    <h1 class="lost__title">Page not found</h1>
+    <p class="prose">The address may be mistyped, or the page may have moved. The portfolio itself is still on the grid.</p>
     <a class="btn btn--primary" href="/">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <svg class="btn__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" /></svg>
       Back to the portfolio
     </a>
   </main>

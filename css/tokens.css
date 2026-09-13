@@ -1,79 +1,82 @@
 /* ============================================================
    DESIGN TOKENS
-   Single source of truth for colour, type, space, and shape.
-   Nothing below this file should hardcode a colour or a radius.
+   Single source of truth for colour, type, space, shape, motion.
+   Nothing outside this file hardcodes a colour or a radius.
    ============================================================ */
 
 :root {
 
-  /* ---- Ground -------------------------------------------------
-     Navy, from deepest to most lifted. Surfaces step up as they
-     come forward; nothing on the page uses pure black.          */
-  --ground-000: #040B18;   /* page edge, deepest */
-  --ground-100: #060F20;   /* page */
-  --ground-200: #0A1729;   /* alternating section */
-  --ground-300: #0E1F37;   /* surface */
-  --ground-400: #142945;   /* surface, lifted */
-  --ground-500: #1B3355;   /* surface, hover */
+  /* ---- Carbon ground ------------------------------------------
+     Graphite to gunmetal, deepest first. Slightly cool so the
+     red reads hot against it. No pure black anywhere.           */
+  --carbon-000: #07080A;
+  --carbon-100: #0B0C0E;   /* page */
+  --carbon-200: #0F1114;   /* alternate band */
+  --carbon-300: #14171B;   /* panel */
+  --carbon-400: #1A1E23;   /* panel, lifted */
+  --carbon-500: #232830;   /* hover */
 
-  /* ---- Accent -------------------------------------------------
-     Red Bull red. 3.8:1 on navy, which clears WCAG AA for large
-     text (3:1) but NOT for body-size text (4.5:1). So it is a
-     structural colour: fills, rules, borders, display type.
-     Never set it on anything under 24px unless it is 700+ weight
-     and at least 18.66px.                                       */
-  --accent:      #DB0A40;
-  --accent-lift: #F0114A;  /* hover */
-  --accent-08:   rgba(219, 10, 64, 0.08);
-  --accent-14:   rgba(219, 10, 64, 0.14);
-  --accent-30:   rgba(219, 10, 64, 0.30);
-  --accent-50:   rgba(219, 10, 64, 0.50);
+  /* ---- Lines ----------------------------------------------------
+     Gunmetal hairlines. They carry the structure that card
+     borders would otherwise carry.                               */
+  --line-faint:  rgba(176, 186, 200, 0.08);
+  --line-soft:   rgba(176, 186, 200, 0.13);
+  --line:        rgba(176, 186, 200, 0.22);
+  --line-strong: rgba(176, 186, 200, 0.36);
 
-  /* ---- Signal -------------------------------------------------
-     Sun-disc yellow. 12.6:1 on navy. This is what carries every
-     small piece of accent text: labels, metadata, tags, inline
-     emphasis. Where the accent would fail contrast, use this.   */
-  --signal:      #FFC906;
-  --signal-10:   rgba(255, 201, 6, 0.10);
-  --signal-30:   rgba(255, 201, 6, 0.30);
+  /* ---- Accent: electric red ------------------------------------
+     5.2:1 on the panel colour, so unlike a deeper crimson it can
+     carry small text as well as fills and rules. Buttons take
+     near-black text: white on this red is only 3.5:1.            */
+  --red:       #FF3B3F;
+  --red-hot:   #FF5A5D;
+  --red-08:    rgba(255, 59, 63, 0.08);
+  --red-16:    rgba(255, 59, 63, 0.16);
+  --red-35:    rgba(255, 59, 63, 0.35);
 
-  /* ---- Text ---------------------------------------------------
-     All four pass AA against ground-100 through ground-400.     */
-  --text-100: #F2F5FA;   /* headings */
-  --text-200: #C9D4E4;   /* body */
-  --text-300: #94A6C0;   /* secondary */
-  --text-400: #7A8DA9;   /* metadata, faintest legible */
+  /* ---- Status ---------------------------------------------------
+     Semantic only, borrowed from timing screens. Green means
+     something is live or active; amber means in development.
+     Never decorative.                                            */
+  --go:        #3DDC84;
+  --go-14:     rgba(61, 220, 132, 0.14);
+  --caution:   #FFB020;
+  --caution-14: rgba(255, 176, 32, 0.14);
 
-  /* ---- Lines --------------------------------------------------
-     The instrument grid. Hairlines do the structural work that
-     card borders would otherwise do.                            */
-  --line-soft:   rgba(148, 166, 192, 0.14);
-  --line:        rgba(148, 166, 192, 0.22);
-  --line-strong: rgba(148, 166, 192, 0.34);
-  --line-accent: var(--accent-30);
+  /* ---- Text ----------------------------------------------------- */
+  --text-100: #F3F5F8;   /* headings */
+  --text-200: #C5CCD6;   /* body */
+  --text-300: #97A1AF;   /* secondary */
+  --text-400: #7F8A98;   /* metadata, faintest legible */
 
-  /* ---- Type ---------------------------------------------------
-     Archivo is a variable font with a width axis (75-125). The
-     display face is the same family stretched wide, which gives
-     the headings an industrial, plotted-on-a-panel feel without
-     loading a second family.                                    */
-  --font-display: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+  /* ---- Car silhouettes ----------------------------------------- */
+  --car-body:  #1B1F25;
+  --car-tyre:  #08090B;
+  --car-line:  rgba(176, 186, 200, 0.28);
+  --car-head:  #E9EEF6;
+  --car-rear:  var(--red);
+
+  /* ---- Type ------------------------------------------------------
+     Saira on its width axis is the timing-board voice: condensed,
+     heavy, uppercase. Archivo carries reading text. JetBrains Mono
+     carries every number and data label.                        */
+  --font-display: 'Saira', 'Arial Narrow', 'Helvetica Neue', sans-serif;
   --font-body:    'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
-  --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  --width-display: 112%;   /* font-stretch for headings */
-  --width-wide:    118%;   /* font-stretch for the hero name */
+  --stretch-tight: 68%;    /* hero name, big numerals */
+  --stretch-cond:  78%;    /* section headings */
+  --stretch-semi:  88%;    /* card titles */
 
-  /* Type scale. Fluid between the mobile and desktop bounds. */
-  --step--1: clamp(0.78rem, 0.76rem + 0.10vw, 0.83rem);
+  --step--2: clamp(0.66rem, 0.64rem + 0.08vw, 0.70rem);
+  --step--1: clamp(0.76rem, 0.74rem + 0.10vw, 0.82rem);
   --step-0:  clamp(0.94rem, 0.90rem + 0.18vw, 1.02rem);
-  --step-1:  clamp(1.12rem, 1.05rem + 0.32vw, 1.32rem);
-  --step-2:  clamp(1.38rem, 1.24rem + 0.64vw, 1.85rem);
-  --step-3:  clamp(1.75rem, 1.48rem + 1.25vw, 2.70rem);
-  --step-4:  clamp(2.30rem, 1.70rem + 2.90vw, 4.60rem);
+  --step-1:  clamp(1.12rem, 1.04rem + 0.36vw, 1.36rem);
+  --step-2:  clamp(1.45rem, 1.26rem + 0.80vw, 2.05rem);
+  --step-3:  clamp(2.00rem, 1.60rem + 1.80vw, 3.30rem);
+  --step-4:  clamp(3.10rem, 2.00rem + 5.20vw, 6.90rem);
 
-  /* ---- Space --------------------------------------------------
-     A 4px base. Section rhythm sits at --space-9/--space-10.    */
+  /* ---- Space ----------------------------------------------------- */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -85,34 +88,34 @@
   --space-9: 5rem;
   --space-10: 7rem;
 
-  /* ---- Shape --------------------------------------------------
-     One radius scale, applied consistently. Instruments are not
-     rounded, so the whole scale is tight and nothing is a pill. */
-  --r-sm: 3px;   /* tags, badges */
-  --r-md: 5px;   /* buttons, inputs */
-  --r-lg: 8px;   /* surfaces */
+  /* ---- Shape -----------------------------------------------------
+     Precision parts: tight radii, and a chamfered corner (clip-path)
+     on the few elements that should read as machined hardware.   */
+  --r-xs: 2px;
+  --r-sm: 3px;
+  --r-md: 4px;
+  --chamfer: 10px;
 
-  /* ---- Motion -------------------------------------------------
-     Two curves. `--ease` for interface feedback, `--ease-out`
-     for entrances. Durations stay short: this should read as
-     responsive instrumentation, not as a slideshow.             */
-  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-fast:  120ms;
-  --dur:       220ms;
-  --dur-slow:  520ms;
+  /* ---- Motion ----------------------------------------------------
+     Durations for the CSS fallbacks. Anime.js choreography reads
+     the same values from js/motion/config.js.                    */
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur:      220ms;
 
-  /* ---- Layout -------------------------------------------------  */
-  --measure:   68ch;    /* max line length for body copy */
-  --shell:     1180px;  /* content container */
-  --gutter:    clamp(1.15rem, 4vw, 2.5rem);
-  --nav-h:     64px;
+  /* ---- Layout ---------------------------------------------------- */
+  --measure: 66ch;
+  --shell:   1240px;
+  --gutter:  clamp(1.15rem, 4vw, 2.75rem);
+  --nav-h:   64px;
 
-  /* ---- Layers -------------------------------------------------
-     Documented scale. Nothing in this project should use a
-     z-index that is not one of these.                           */
-  --z-base:    0;
-  --z-raised:  10;
+  /* ---- Layers ----------------------------------------------------
+     Documented scale. Nothing uses a z-index outside this list.  */
+  --z-grid:    0;    /* fixed background grid + distant cars */
+  --z-content: 1;
+  --z-track:   2;    /* racing lines and cars inside sections */
   --z-nav:     100;
-  --z-overlay: 200;
+  --z-sheet:   110;  /* mobile menu */
+  --z-skip:    200;
 }
