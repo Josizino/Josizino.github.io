@@ -87,14 +87,3 @@ python3 -m http.server 4173
 
 Open <http://localhost:4173>. Modules need http; opening `index.html` from disk
 shows the static fallback.
-
-## Known issues
-
-- **The resume PDF is out of date on StintMind.** It still describes an earlier
-  sim-racing desktop app (60 Hz telemetry, trained ML models, PyQt6). The site
-  describes what exists today: the security foundation of an endurance
-  race-operations platform.
-- **`resume.html` contradicts the portfolio** on Cari-Med and NCAE dates and
-  still uses the old theme. It is not linked from the site.
-- **No public repositories** exist for StintMind or Project Ejay, so their cards
-  have no GitHub link.
