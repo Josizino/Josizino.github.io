@@ -398,10 +398,13 @@
    001 lead | 002 7 + 003 5 | 004 6 + 005 6 | 006 7 + 007 5 */
 .spec-card { grid-column: span 6; }
 .spec-card--lead { grid-column: 1 / -1; }
-.projects__grid > :nth-child(2) { grid-column: span 7; }
-.projects__grid > :nth-child(3) { grid-column: span 5; }
-.projects__grid > :nth-child(6) { grid-column: span 7; }
-.projects__grid > :nth-child(7) { grid-column: span 5; }
+/* Six sheets: 001 full width, then two paired rows, then the wide
+   Cari-Med screenshot closing full width. Every row fills 12 columns. */
+.projects__grid > :nth-child(2) { grid-column: span 7; }   /* fim         */
+.projects__grid > :nth-child(3) { grid-column: span 5; }   /* IMSA UX     */
+.projects__grid > :nth-child(4) { grid-column: span 7; }   /* HuddleBoard */
+.projects__grid > :nth-child(5) { grid-column: span 5; }   /* Unity FPS   */
+.projects__grid > :nth-child(6) { grid-column: 1 / -1; }   /* Cari-Med    */
 
 .spec-card {
   display: flex;
